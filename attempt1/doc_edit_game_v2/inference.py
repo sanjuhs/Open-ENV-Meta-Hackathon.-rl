@@ -12,26 +12,26 @@ from typing import List
 
 from openai import OpenAI
 
-API_BASE_URL = os.environ.get("API_BASE_URL", "https://api.openai.com/v1")
-MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-4o-mini")
-API_KEY = os.environ.get("HF_TOKEN", os.environ.get("OPENAI_API_KEY", ""))
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
+MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
+API_KEY = os.getenv("HF_TOKEN")
+IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME", "doc_edit_game_v2-env:latest")
 
 BENCHMARK = "doc_edit_game_v2"
 TASKS = ["legal_easy", "legal_medium", "legal_hard", "pharma_easy", "pharma_hard"]
 SUCCESS_THRESHOLD = 0.90
-IMAGE_NAME = os.environ.get("DOC_EDIT_GAME_V2_IMAGE", "doc_edit_game_v2-env:latest")
 
 
 def log_start(task: str, env: str, model: str):
     print(f"[START] task={task} env={env} model={model}", flush=True)
 
 def log_step(step: int, action: dict, reward: float, done: bool, error=None):
-    err_str = f" error={error}" if error else "error=null"
-    print(f"[STEP] step={step} action={json.dumps(action)} reward={reward:.2f} done={str(done).lower()} {err_str}", flush=True)
+    error_val = error if error else "null"
+    print(f"[STEP] step={step} action={json.dumps(action)} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
 
 def log_end(success: bool, steps: int, score: float, rewards: List[float]):
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
-    print(f"[END] success={str(success).lower()} steps={steps} score={score:.2f} rewards={rewards_str}", flush=True)
+    print(f"[END] success={str(success).lower()} steps={steps} score={score:.3f} rewards={rewards_str}", flush=True)
 
 
 SYSTEM_PROMPT = """You are an expert document editor AI. You receive a document chunk (XML-tagged) and an edit instruction.
