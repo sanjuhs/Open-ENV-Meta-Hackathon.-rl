@@ -17,7 +17,8 @@ MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
 API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY")
 IMAGE_NAME = os.getenv("IMAGE_NAME") or os.getenv("LOCAL_IMAGE_NAME")
 
-HF_REPO_ID = "sanjuhs/doc_edit_v4"
+HF_SPACE_URL = "https://sanjuhs-doc-edit-v5.hf.space"
+HF_REPO_ID = "sanjuhs/doc_edit_v5"
 BENCHMARK = "doc_edit_game_v2"
 TASKS = ["legal_easy", "legal_medium", "legal_hard", "pharma_easy", "pharma_hard"]
 SUCCESS_THRESHOLD = 0.90
@@ -98,15 +99,17 @@ def get_model_action(client: OpenAI, chunk: str, instruction: str, similarity: f
 
 
 async def create_env():
-    """Create environment client — uses IMAGE_NAME set by validator/user."""
+    """Create environment client — tries Docker image, then direct HF Space connection."""
     from doc_edit_game_v2 import DocEditGameV2Env
 
     if IMAGE_NAME:
         print(f"[DEBUG] Using Docker image: {IMAGE_NAME}", flush=True)
         return await DocEditGameV2Env.from_docker_image(IMAGE_NAME)
 
-    print(f"[DEBUG] No IMAGE_NAME set, falling back to HF registry: {HF_REPO_ID}", flush=True)
-    return await DocEditGameV2Env.from_env(HF_REPO_ID)
+    print(f"[DEBUG] Connecting directly to HF Space: {HF_SPACE_URL}", flush=True)
+    env = DocEditGameV2Env(base_url=HF_SPACE_URL)
+    await env.connect()
+    return env
 
 
 async def run_task(env, task_name: str) -> dict:
