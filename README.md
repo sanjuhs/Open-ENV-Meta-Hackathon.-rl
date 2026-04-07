@@ -2,7 +2,7 @@
 
 **OpenEnv Round 1 Competition** | Sanjayprasad H S | Solo Warrior
 
-**HF Space**: [sanjuhs/doc_edit_v3](https://huggingface.co/spaces/sanjuhs/doc_edit_v3)
+**HF Space**: [sanjuhs/doc_edit_v4](https://huggingface.co/spaces/sanjuhs/doc_edit_v4)
 
 ## What This Is
 
@@ -103,8 +103,8 @@ uv sync
 uvicorn server.app:app --host 0.0.0.0 --port 8000
 
 # Or via Docker
-docker build -t doc_edit_v3:latest -f server/Dockerfile .
-docker run -p 8000:8000 doc_edit_v3:latest
+docker build -t doc_edit_v4:latest -f server/Dockerfile .
+docker run -p 8000:8000 doc_edit_v4:latest
 ```
 
 ### Running Inference
@@ -165,4 +165,4 @@ attempt1/doc_edit_game_v2/
 - **Competition**: OpenEnv Round 1 Hackathon (Meta + Hugging Face)
 - **Deadline**: 8 April 2026, 11:59 PM IST
 - **Participant**: Sanjayprasad H S (Solo)
-- **HF Space**: https://huggingface.co/spaces/sanjuhs/doc_edit_v3
+- **HF Space**: https://huggingface.co/spaces/sanjuhs/doc_edit_v4

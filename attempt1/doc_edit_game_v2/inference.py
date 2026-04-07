@@ -17,7 +17,7 @@ MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
 API_KEY = os.getenv("HF_TOKEN")
 LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
 
-HF_REPO_ID = "sanjuhs/doc_edit_v3"
+HF_REPO_ID = "sanjuhs/doc_edit_v4"
 BENCHMARK = "doc_edit_game_v2"
 TASKS = ["legal_easy", "legal_medium", "legal_hard", "pharma_easy", "pharma_hard"]
 SUCCESS_THRESHOLD = 0.90
