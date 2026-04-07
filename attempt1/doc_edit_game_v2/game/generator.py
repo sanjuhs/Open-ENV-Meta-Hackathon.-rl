@@ -17,7 +17,7 @@ DIFFICULTY_CONFIG = {
 }
 
 # Domain-specific template pools
-LEGAL_TEMPLATES = ["legal_contract", "affidavit", "case_brief"]
+LEGAL_TEMPLATES = ["legal_contract", "affidavit", "case_brief", "tax_assessment"]
 PHARMA_TEMPLATES = ["drug_label", "clinical_study_report"]
 BUSINESS_TEMPLATES = ["business_report"]
 
@@ -87,6 +87,8 @@ def generate_task(doc_seed: int = 0, corruption_seed: int = 0, difficulty: int =
 
 
 def _domain_for_type(doc_type: str) -> str:
+    if doc_type == "tax_assessment":
+        return "tax"
     if doc_type in LEGAL_TEMPLATES:
         return "legal"
     if doc_type in PHARMA_TEMPLATES:

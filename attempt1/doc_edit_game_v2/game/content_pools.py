@@ -30,6 +30,8 @@ PHARMA_COMPANIES = [
     "Zenith Pharmaceuticals", "CureWell Biotech", "PharmaCore Solutions",
     "Helix Life Sciences", "Pristine Biologics", "OmniCure Research",
     "Vitalink Pharmaceuticals",
+    "Novo Nordisk A/S", "AbbVie Inc.", "Pfizer Inc.", "Merck & Co.",
+    "Eli Lilly and Company", "Johnson & Johnson", "AstraZeneca PLC",
 ]
 
 DRUG_NAMES = [
@@ -38,6 +40,9 @@ DRUG_NAMES = [
     ("Paxovent", "paxovent citrate"), ("Renostat", "renostat potassium"),
     ("Cardivex", "cardivex tartrate"), ("Neuroflex", "neuroflex sodium"),
     ("Dermacil", "dermacil propionate"), ("Hemofix", "hemofix sulfate"),
+    ("Ozempex", "semaglutide"), ("Adalibra", "adalimumab"),
+    ("Trulicex", "dulaglutide"), ("Jardivex", "empagliflozin"),
+    ("Keytriva", "pembrolizumab"), ("Eliquisar", "apixaban"),
 ]
 
 DRUG_INDICATIONS = [
@@ -48,6 +53,12 @@ DRUG_INDICATIONS = [
     "management of chronic obstructive pulmonary disease (COPD)",
     "treatment of rheumatoid arthritis in adults who have had inadequate response to DMARDs",
     "prophylaxis of deep vein thrombosis in patients undergoing orthopedic surgery",
+    "improvement of glycemic control in adults with Type 2 diabetes mellitus",
+    "reduction of the risk of major adverse cardiovascular events in adults with Type 2 diabetes mellitus and established cardiovascular disease",
+    "reducing signs and symptoms of moderately to severely active rheumatoid arthritis in adult patients",
+    "treatment of adult patients with moderately to severely active Crohn's disease who have had an inadequate response to conventional therapy",
+    "treatment of adult patients with moderately to severely active ulcerative colitis",
+    "treatment of chronic weight management in adults with an initial body mass index (BMI) of 30 kg/m2 or greater",
 ]
 
 ADVERSE_REACTIONS = [
@@ -55,6 +66,49 @@ ADVERSE_REACTIONS = [
     "dry mouth", "constipation", "elevated liver enzymes", "peripheral edema",
     "hypotension", "tachycardia", "rash", "pruritus", "arthralgia",
     "upper respiratory tract infection", "urinary tract infection",
+    "pancreatitis", "diabetic retinopathy complications", "hypoglycemia",
+    "acute kidney injury", "injection site reactions", "sinusitis",
+    "abdominal pain", "vomiting", "decreased appetite", "dyspepsia",
+    "acute gallbladder disease", "hypersensitivity reactions",
+    "serious infections including tuberculosis", "invasive fungal infections",
+    "hepatitis B virus reactivation", "demyelinating disease",
+    "cytopenias", "heart failure worsening", "lupus-like syndrome",
+]
+
+# FDA boxed warning templates (from real Ozempic/Humira labels)
+BOXED_WARNINGS = [
+    "In rodents, {generic} causes dose-dependent and treatment-duration-dependent thyroid C-cell tumors at clinically relevant exposures. It is unknown whether {brand} causes thyroid C-cell tumors, including medullary thyroid carcinoma (MTC), in humans.",
+    "{brand} is contraindicated in patients with a personal or family history of medullary thyroid carcinoma (MTC) or in patients with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+    "Increased risk of serious infections leading to hospitalization or death, including tuberculosis (TB), bacterial sepsis, invasive fungal infections (such as histoplasmosis), and infections due to other opportunistic pathogens.",
+    "Lymphoma and other malignancies, some fatal, have been reported in patients treated with TNF blockers including {brand}.",
+    "{brand} may increase the risk of serious cardiovascular thrombotic events, including myocardial infarction and stroke, which can be fatal. This risk may occur early in treatment and may increase with duration of use.",
+]
+
+# Indian tax/legal terminology (from real Harikrishna Durgi tax case)
+TAX_SECTIONS = [
+    "u/s 148A(b)", "u/s 148A(d)", "u/s 148", "u/s 142(1)", "u/s 144",
+    "u/s 144B", "u/s 147", "u/s 143(3)", "u/s 156", "u/s 271(1)(c)",
+]
+
+TAX_TERMS = [
+    "Assessment Year", "Previous Year", "assessee", "reassessment",
+    "show cause notice", "faceless assessment", "best judgment assessment",
+    "SFT/TDS/TCS high-value transactions", "non-compliance",
+    "Income Tax Department", "Central Board of Direct Taxes",
+    "DIT(S) Insight-NMS", "escaped income", "notice of demand",
+]
+
+# Corporate/annual report terminology (from real Reliance annual report)
+CORPORATE_METRICS = [
+    "Revenue from Operations", "EBITDA", "Profit After Tax", "Earnings Per Share",
+    "Return on Capital Employed", "Net Debt to Equity Ratio", "Free Cash Flow",
+    "Capital Expenditure", "Gross Margin", "Operating Margin",
+    "Digital Services Revenue", "Retail Revenue", "Oil to Chemicals Revenue",
+]
+
+CORPORATE_SEGMENTS = [
+    "Digital Services", "Retail", "Oil to Chemicals", "Oil and Gas",
+    "Media and Entertainment", "Financial Services", "New Energy",
 ]
 
 LEGAL_SECTIONS = [
@@ -123,6 +177,14 @@ MISSPELLINGS = {
     "indemnification": "indemnifcation", "arbitration": "arbitartion", "amendment": "ammendment",
     "affidavit": "affadavit", "interrogatory": "interogatory", "deposition": "depostion",
     "confidentiality": "confidentialty", "proprietary": "propreitary", "intellectual": "intelectual",
+    "semaglutide": "semagultide", "adalimumab": "adalimimab", "subcutaneous": "subcutaneos",
+    "contraindicated": "contraindicatd", "pancreatitis": "pancretitis", "retinopathy": "retinopthy",
+    "hypoglycemia": "hypoglycmia", "cardiovascular": "cardivascular", "tuberculosis": "tuburculosis",
+    "malignancy": "maligancy", "immunogenicity": "immunogenicty", "pharmacokinetics": "pharmacokenetics",
+    "reassessment": "reassesment", "adjudication": "adjudicaiton", "contravention": "contravenion",
+    "intimation": "intimiation", "undertaking": "undertaknig", "remuneration": "remunaration",
+    "consolidated": "consolodated", "sustainability": "sustainabilty", "infrastructure": "infastructure",
+    "manufacturing": "manufacuring", "shareholders": "sharehoders", "depreciation": "depriciation",
 }
 
 ALTERNATE_NAMES = {
