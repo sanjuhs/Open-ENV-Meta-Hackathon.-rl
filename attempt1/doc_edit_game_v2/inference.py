@@ -8,15 +8,16 @@ Required env vars: API_BASE_URL, MODEL_NAME, HF_TOKEN
 import asyncio
 import json
 import os
-from typing import List
+from typing import List, Optional
 
 from openai import OpenAI
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
 API_KEY = os.getenv("HF_TOKEN")
-IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME", "doc_edit_game_v2-env:latest")
+LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
 
+HF_REPO_ID = "sanjuhs/doc_edit_v3"
 BENCHMARK = "doc_edit_game_v2"
 TASKS = ["legal_easy", "legal_medium", "legal_hard", "pharma_easy", "pharma_hard"]
 SUCCESS_THRESHOLD = 0.90
@@ -25,9 +26,9 @@ SUCCESS_THRESHOLD = 0.90
 def log_start(task: str, env: str, model: str):
     print(f"[START] task={task} env={env} model={model}", flush=True)
 
-def log_step(step: int, action: dict, reward: float, done: bool, error=None):
+def log_step(step: int, action: str, reward: float, done: bool, error: Optional[str] = None):
     error_val = error if error else "null"
-    print(f"[STEP] step={step} action={json.dumps(action)} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
+    print(f"[STEP] step={step} action={action} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
 
 def log_end(success: bool, steps: int, score: float, rewards: List[float]):
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
@@ -62,12 +63,6 @@ Rules:
 - ONE tool call per response, as valid JSON (no markdown fences)
 - Use EXACT text from the document for the target parameter
 - Fix the most impactful corruption first (highest similarity improvement)
-- For spelling: target = misspelled word, content = correct word
-- For case: use replace to fix capitalization
-- For formatting: use format_text to add bold/italic/underline tags
-- For alignment/spacing: use set_alignment/set_spacing with the line index
-- For PDF artifacts: use merge_runs with the line index
-- For junk chars: use clean_junk_chars
 """
 
 
@@ -102,11 +97,24 @@ def get_model_action(client: OpenAI, chunk: str, instruction: str, similarity: f
         return {"tool": "replace", "params": {"target": "", "content": ""}}
 
 
-async def run_task(task_name: str) -> dict:
-    from doc_edit_game_v2 import DocEditAction, DocEditGameV2Env
+async def create_env():
+    """Create environment client — tries multiple strategies."""
+    from doc_edit_game_v2 import DocEditGameV2Env
+
+    # Strategy 1: local Docker image (if explicitly provided)
+    if LOCAL_IMAGE_NAME:
+        print(f"[DEBUG] Using local Docker image: {LOCAL_IMAGE_NAME}", flush=True)
+        return await DocEditGameV2Env.from_docker_image(LOCAL_IMAGE_NAME)
+
+    # Strategy 2: pull from HF Docker registry via from_env
+    print(f"[DEBUG] Pulling from HF registry: {HF_REPO_ID}", flush=True)
+    return await DocEditGameV2Env.from_env(HF_REPO_ID)
+
+
+async def run_task(env, task_name: str) -> dict:
+    from doc_edit_game_v2 import DocEditAction
 
     client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
-    env = await DocEditGameV2Env.from_docker_image(IMAGE_NAME)
 
     history: List[str] = []
     rewards: List[float] = []
@@ -137,7 +145,7 @@ async def run_task(task_name: str) -> dict:
             rewards.append(reward)
             steps_taken = step
 
-            log_step(step=step, action=action_dict, reward=reward, done=result.done)
+            log_step(step=step, action=json.dumps(action_dict), reward=reward, done=result.done)
             history.append(f"Step {step}: {action_dict.get('tool')} success={obs.last_tool_success} sim={obs.similarity:.3f}")
 
             if result.done:
@@ -146,22 +154,28 @@ async def run_task(task_name: str) -> dict:
         score = obs.similarity
         success = score >= SUCCESS_THRESHOLD
 
+    except Exception as exc:
+        print(f"[DEBUG] Task {task_name} error: {exc}", flush=True)
     finally:
-        try:
-            await env.close()
-        except Exception:
-            pass
         log_end(success=success, steps=steps_taken, score=score, rewards=rewards)
 
     return {"task": task_name, "score": score, "success": success, "steps": steps_taken}
 
 
 async def main():
+    env = await create_env()
     results = []
-    for task in TASKS:
-        r = await run_task(task)
-        results.append(r)
-        print(f"\n{'='*60}", flush=True)
+
+    try:
+        for task in TASKS:
+            r = await run_task(env, task)
+            results.append(r)
+            print(f"\n{'='*60}", flush=True)
+    finally:
+        try:
+            await env.close()
+        except Exception as e:
+            print(f"[DEBUG] env.close() error: {e}", flush=True)
 
     print(f"\n{'='*60}")
     print("SUMMARY")

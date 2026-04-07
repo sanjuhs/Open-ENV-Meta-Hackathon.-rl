@@ -35,3 +35,6 @@ uv.lock
 # Misc
 *.log
 .cache/
+
+# Sample data (large binary)
+sample-pdfs/
