@@ -14,8 +14,8 @@ from openai import OpenAI
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
-API_KEY = os.getenv("HF_TOKEN")
-LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
+API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY")
+IMAGE_NAME = os.getenv("IMAGE_NAME") or os.getenv("LOCAL_IMAGE_NAME")
 
 HF_REPO_ID = "sanjuhs/doc_edit_v4"
 BENCHMARK = "doc_edit_game_v2"
@@ -98,16 +98,14 @@ def get_model_action(client: OpenAI, chunk: str, instruction: str, similarity: f
 
 
 async def create_env():
-    """Create environment client — tries multiple strategies."""
+    """Create environment client — uses IMAGE_NAME set by validator/user."""
     from doc_edit_game_v2 import DocEditGameV2Env
 
-    # Strategy 1: local Docker image (if explicitly provided)
-    if LOCAL_IMAGE_NAME:
-        print(f"[DEBUG] Using local Docker image: {LOCAL_IMAGE_NAME}", flush=True)
-        return await DocEditGameV2Env.from_docker_image(LOCAL_IMAGE_NAME)
+    if IMAGE_NAME:
+        print(f"[DEBUG] Using Docker image: {IMAGE_NAME}", flush=True)
+        return await DocEditGameV2Env.from_docker_image(IMAGE_NAME)
 
-    # Strategy 2: pull from HF Docker registry via from_env
-    print(f"[DEBUG] Pulling from HF registry: {HF_REPO_ID}", flush=True)
+    print(f"[DEBUG] No IMAGE_NAME set, falling back to HF registry: {HF_REPO_ID}", flush=True)
     return await DocEditGameV2Env.from_env(HF_REPO_ID)
 
 
