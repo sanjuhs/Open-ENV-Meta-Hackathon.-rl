@@ -5,10 +5,14 @@ from difflib import SequenceMatcher
 from typing import Dict, List
 
 
+EPS = 1e-4
+
 def compute_similarity(current: str, target: str) -> float:
     if not target:
-        return 1.0 if not current else 0.0
-    return SequenceMatcher(None, current, target).ratio()
+        raw = 1.0 if not current else 0.0
+    else:
+        raw = SequenceMatcher(None, current, target).ratio()
+    return max(EPS, min(1.0 - EPS, raw))
 
 
 def compute_collateral_damage(original: str, current: str, target: str) -> float:
@@ -43,7 +47,7 @@ def compute_collateral_damage(original: str, current: str, target: str) -> float
 def grade_edit_accuracy(current: str, target: str, corruptions: List[dict]) -> float:
     """Check what fraction of corruptions were reversed."""
     if not corruptions:
-        return 1.0
+        return 1.0 - EPS
     fixed = 0
     for c in corruptions:
         ctype = c.get("type", "")

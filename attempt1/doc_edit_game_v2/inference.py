@@ -31,7 +31,12 @@ def log_step(step: int, action: str, reward: float, done: bool, error: Optional[
     error_val = error if error else "null"
     print(f"[STEP] step={step} action={action} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
 
+def clamp_score(s: float) -> float:
+    """Clamp to open interval (0, 1) — validator rejects exact 0.0 and 1.0."""
+    return max(0.0001, min(0.9999, s))
+
 def log_end(success: bool, steps: int, score: float, rewards: List[float]):
+    score = clamp_score(score)
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
     print(f"[END] success={str(success).lower()} steps={steps} score={score:.3f} rewards={rewards_str}", flush=True)
 
