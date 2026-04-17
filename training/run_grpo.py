@@ -4,12 +4,17 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 from datasets import load_dataset
 from peft import AutoPeftModelForCausalLM, LoraConfig
 from transformers import AutoTokenizer
 from trl import GRPOConfig, GRPOTrainer
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from training.docedit_training import extract_document_from_completion, score_document
 
