@@ -1,0 +1,70 @@
+{
+  "run_date": "2026-04-17",
+  "hardware": "1x H200 SXM",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "sft": {
+    "train_runtime_seconds": 109.3807,
+    "train_loss_final": 0.06345631678899129,
+    "mean_token_accuracy_final": 0.989537720878919,
+    "logged_points": [
+      {
+        "step_label": "step_5",
+        "loss": 0.0811,
+        "mean_token_accuracy": 0.9826311379671097,
+        "epoch": 0.28
+      },
+      {
+        "step_label": "step_10",
+        "loss": 0.0352,
+        "mean_token_accuracy": 0.9916393369436264,
+        "epoch": 0.56
+      },
+      {
+        "step_label": "step_15",
+        "loss": 0.091,
+        "mean_token_accuracy": 0.9768773868680001,
+        "epoch": 0.83
+      },
+      {
+        "step_label": "final",
+        "loss": 0.06345631678899129,
+        "mean_token_accuracy": 0.989537720878919,
+        "epoch": 1.0
+      }
+    ]
+  },
+  "smoke_eval": {
+    "base_qwen25_3b": {
+      "cases": 2,
+      "mean_similarity": 0.9947,
+      "mean_composite_score": 0.87235,
+      "mean_edit_accuracy": 0.5,
+      "mean_collateral_damage": 0.0
+    },
+    "sft_lora": {
+      "cases": 2,
+      "mean_similarity": 0.98565,
+      "mean_composite_score": 0.8619,
+      "mean_edit_accuracy": 0.5,
+      "mean_collateral_damage": 0.0238
+    }
+  },
+  "grpo_snapshot": {
+    "logged_points": [
+      {
+        "step_label": "step_5",
+        "loss": 0.003,
+        "reward_mean": 0.8421600222587585,
+        "step_time_seconds": 66.42107063950971,
+        "mean_completion_length": 1270.45
+      },
+      {
+        "step_label": "step_10",
+        "loss": 0.0423,
+        "reward_mean": 0.7638199925422668,
+        "step_time_seconds": 58.123529691807924,
+        "mean_completion_length": 1367.8
+      }
+    ]
+  }
+}
