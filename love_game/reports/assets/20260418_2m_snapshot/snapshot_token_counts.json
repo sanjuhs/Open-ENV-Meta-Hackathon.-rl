@@ -1,0 +1,78 @@
+{
+  "sft": {
+    "train": {
+      "rows": 896,
+      "prompt_tokens": 308910,
+      "completion_tokens": 98503,
+      "text_tokens": 407342
+    },
+    "validation": {
+      "rows": 111,
+      "prompt_tokens": 35249,
+      "completion_tokens": 11434,
+      "text_tokens": 46677
+    },
+    "test": {
+      "rows": 111,
+      "prompt_tokens": 36173,
+      "completion_tokens": 12383,
+      "text_tokens": 48550
+    }
+  },
+  "dpo": {
+    "train": {
+      "rows": 345,
+      "json_tokens": 218739
+    },
+    "validation": {
+      "rows": 42,
+      "json_tokens": 25607
+    },
+    "test": {
+      "rows": 42,
+      "json_tokens": 27200
+    }
+  },
+  "rm_pointwise": {
+    "train": {
+      "rows": 688,
+      "json_tokens": 511394
+    },
+    "validation": {
+      "rows": 85,
+      "json_tokens": 67043
+    },
+    "test": {
+      "rows": 85,
+      "json_tokens": 65832
+    }
+  },
+  "ppo": {
+    "train": {
+      "rows": 896,
+      "json_tokens": 722066
+    },
+    "validation": {
+      "rows": 111,
+      "json_tokens": 81902
+    },
+    "test": {
+      "rows": 111,
+      "json_tokens": 85011
+    }
+  },
+  "grpo": {
+    "train": {
+      "rows": 109,
+      "json_tokens": 37185
+    },
+    "validation": {
+      "rows": 13,
+      "json_tokens": 4332
+    },
+    "test": {
+      "rows": 13,
+      "json_tokens": 4412
+    }
+  }
+}

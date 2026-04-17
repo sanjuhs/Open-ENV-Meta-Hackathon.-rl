@@ -36,6 +36,7 @@ uv.lock
 *.log
 .cache/
 *.tgz
+.tmp_pydeps/
 
 # Sample data (large binary)
 sample-pdfs/
@@ -45,6 +46,17 @@ training/__pycache__/
 training/datasets/
 training/runs/
 training/runpod-info.md
+
+# Love Game heavy artifacts
+love_game/checkpoints/
+love_game/logs/
+love_game/local_backups/
+love_game/hf_exports/
+love_game/datasets/
+love_game/models/
+love_game/runs/
+love_game/reports/assets/*/trainer_states/
+love_game/reports/assets/*/splits/
 
 # Swift / macOS local builds
 macos editor/.build/

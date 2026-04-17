@@ -1,0 +1,53 @@
+[
+  {
+    "run": "reward_model_v2",
+    "label": "Reward Model v2 (DistilRoBERTa)",
+    "final_eval_loss": 0.6931525468826294,
+    "extra": {
+      "eval_accuracy": 0.4588235294117647
+    },
+    "checkpoint": 172
+  },
+  {
+    "run": "smol_135m_sft_v3",
+    "label": "SmolLM2-135M-Instruct + SFT",
+    "final_eval_loss": 3.3743796348571777,
+    "extra": {
+      "epoch": 5.0
+    },
+    "checkpoint": 140
+  },
+  {
+    "run": "smol_135m_sft_dpo_v2",
+    "label": "SmolLM2-135M-Instruct + SFT + DPO",
+    "final_eval_loss": 0.23338568210601807,
+    "extra": {},
+    "checkpoint": 176
+  },
+  {
+    "run": "smol_135m_sft_dpo_grpo_v1",
+    "label": "SmolLM2-135M-Instruct + SFT + DPO + GRPO",
+    "final_eval_loss": 9.80046488407993e-10,
+    "extra": {},
+    "checkpoint": null
+  },
+  {
+    "run": "reward_model_ppo_v1",
+    "label": "PPO-Compatible Reward Model",
+    "final_eval_loss": 2.109789420501329e-05,
+    "extra": {},
+    "checkpoint": null
+  },
+  {
+    "run": "smol_135m_sft_dpo_ppo_v1",
+    "label": "SmolLM2-135M-Instruct + SFT + DPO + PPO",
+    "final_eval_loss": null,
+    "extra": {
+      "episodes": 64,
+      "global_step": 16,
+      "last_rlhf_reward": 1.1104710102081299,
+      "last_score": 1.1328125
+    },
+    "checkpoint": null
+  }
+]

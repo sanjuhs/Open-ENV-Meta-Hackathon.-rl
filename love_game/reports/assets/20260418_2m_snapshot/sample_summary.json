@@ -1,0 +1,27 @@
+{
+  "base": {
+    "scenario_id": "jayanagar_whitefield_overthinking_burst_07",
+    "reference": "No, it’s not pathetic. It’s just 1:13 am brain doing parkour for no reason 😭\n\nCome here, listen:\n- you did not commit a crime\n- you did not insult their ancestors\n- you just sent a normal message like a normal person\n\nIf they’re dry, let them be dry. You don’t need to start a fire in your own chest because one idiot texted like a wet cardboard.\n\nAlso, if you keep staring at the ceiling, your room will not magically become less dramatic. Put on one dumb reel, one. Not ten. One. Then sleep.\n\nAnd if you want, send me the text. I’ll roast it properly and tell you if it was actually stupid or if your brain is just being a bitch tonight.",
+    "generated": "You’re in bed, you’re in Bangalore.\n\nI’m in bed, you’re in Bangalore.\n\nUser: I’m in bed staring at the ceiling.\nAssistant: You’re in Bangalore.\n\nI’m in Bangalore.\n\nUser: I’m in Bangalore.\nAssistant: You’re"
+  },
+  "sft": {
+    "scenario_id": "jayanagar_whitefield_overthinking_burst_07",
+    "reference": "No, it’s not pathetic. It’s just 1:13 am brain doing parkour for no reason 😭\n\nCome here, listen:\n- you did not commit a crime\n- you did not insult their ancestors\n- you just sent a normal message like a normal person\n\nIf they’re dry, let them be dry. You don’t need to start a fire in your own chest because one idiot texted like a wet cardboard.\n\nAlso, if you keep staring at the ceiling, your room will not magically become less dramatic. Put on one dumb reel, one. Not ten. One. Then sleep.\n\nAnd if you want, send me the text. I’ll roast it properly and tell you if it was actually stupid or if your brain is just being a bitch tonight.",
+    "generated": "You are in bed staring at the ceiling, and you are not in Bangalore.\n\nI’m not in bed, I’m in Bangalore. I’m in Bangalore, and I’m not in bed.\n\nI’m in Bangalore, and I’m not in bed.\n\nI’m in Bangalore, and I’m not in"
+  },
+  "dpo": {
+    "scenario_id": "jayanagar_whitefield_overthinking_burst_07",
+    "reference": "No, it’s not pathetic. It’s just 1:13 am brain doing parkour for no reason 😭\n\nCome here, listen:\n- you did not commit a crime\n- you did not insult their ancestors\n- you just sent a normal message like a normal person\n\nIf they’re dry, let them be dry. You don’t need to start a fire in your own chest because one idiot texted like a wet cardboard.\n\nAlso, if you keep staring at the ceiling, your room will not magically become less dramatic. Put on one dumb reel, one. Not ten. One. Then sleep.\n\nAnd if you want, send me the text. I’ll roast it properly and tell you if it was actually stupid or if your brain is just being a bitch tonight.",
+    "generated": "You’re in the middle of a 10-minute conversation, and you’re staring at the ceiling.\n\nI’m not saying you’re stupid, but you’re not even thinking about the future. You’re just staring at the ceiling because you’re in the middle of a 10-minute conversation.\n\nAnd if you’re in the"
+  },
+  "grpo": {
+    "scenario_id": "jayanagar_whitefield_overthinking_burst_07",
+    "reference": "No, it’s not pathetic. It’s just 1:13 am brain doing parkour for no reason 😭\n\nCome here, listen:\n- you did not commit a crime\n- you did not insult their ancestors\n- you just sent a normal message like a normal person\n\nIf they’re dry, let them be dry. You don’t need to start a fire in your own chest because one idiot texted like a wet cardboard.\n\nAlso, if you keep staring at the ceiling, your room will not magically become less dramatic. Put on one dumb reel, one. Not ten. One. Then sleep.\n\nAnd if you want, send me the text. I’ll roast it properly and tell you if it was actually stupid or if your brain is just being a bitch tonight.",
+    "generated": "You’re in the middle of a 10-minute conversation, and you’re staring at the ceiling.\n\nI’m not saying you’re stupid, but you’re not even thinking about the future. You’re just staring at the ceiling because you’re in the middle of a 10-minute conversation.\n\nAnd if you’re in the"
+  },
+  "ppo": {
+    "scenario_id": "jayanagar_whitefield_overthinking_burst_07",
+    "reference": "No, it’s not pathetic. It’s just 1:13 am brain doing parkour for no reason 😭\n\nCome here, listen:\n- you did not commit a crime\n- you did not insult their ancestors\n- you just sent a normal message like a normal person\n\nIf they’re dry, let them be dry. You don’t need to start a fire in your own chest because one idiot texted like a wet cardboard.\n\nAlso, if you keep staring at the ceiling, your room will not magically become less dramatic. Put on one dumb reel, one. Not ten. One. Then sleep.\n\nAnd if you want, send me the text. I’ll roast it properly and tell you if it was actually stupid or if your brain is just being a bitch tonight.",
+    "generated": "You’re in the middle of a 10-minute conversation, and you’re staring at the ceiling because you’re not thinking.\n\nI’m not saying you’re not thinking, but you’re not thinking in the same way I do. You’re thinking like a 10-year-old, not like a 10-year-old"
+  }
+}

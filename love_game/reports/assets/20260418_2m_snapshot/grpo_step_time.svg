@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460">
+  <rect width="100%" height="100%" fill="#fcf8f2"/>
+  <rect x="0" y="0" width="100%" height="44" fill="#f2e8d9"/>
+  <text x="70" y="28" font-size="22" font-weight="700" fill="#2e261d">GRPO Step Time</text>
+  <line x1='70' y1='45.00' x2='930' y2='45.00' stroke='#e6ddcf' /><text x='60' y='49.00' text-anchor='end' font-size='12' fill='#725f4a'>1.75</text><line x1='70' y1='135.00' x2='930' y2='135.00' stroke='#e6ddcf' /><text x='60' y='139.00' text-anchor='end' font-size='12' fill='#725f4a'>1.71</text><line x1='70' y1='225.00' x2='930' y2='225.00' stroke='#e6ddcf' /><text x='60' y='229.00' text-anchor='end' font-size='12' fill='#725f4a'>1.67</text><line x1='70' y1='315.00' x2='930' y2='315.00' stroke='#e6ddcf' /><text x='60' y='319.00' text-anchor='end' font-size='12' fill='#725f4a'>1.64</text><line x1='70' y1='405.00' x2='930' y2='405.00' stroke='#e6ddcf' /><text x='60' y='409.00' text-anchor='end' font-size='12' fill='#725f4a'>1.6</text>
+  <line x1='70.00' y1='405' x2='70.00' y2='45' stroke='#f4ede2' /><text x='70.00' y='425' text-anchor='middle' font-size='12' fill='#725f4a'>10</text><line x1='285.00' y1='405' x2='285.00' y2='45' stroke='#f4ede2' /><text x='285.00' y='425' text-anchor='middle' font-size='12' fill='#725f4a'>38</text><line x1='500.00' y1='405' x2='500.00' y2='45' stroke='#f4ede2' /><text x='500.00' y='425' text-anchor='middle' font-size='12' fill='#725f4a'>65</text><line x1='715.00' y1='405' x2='715.00' y2='45' stroke='#f4ede2' /><text x='715.00' y='425' text-anchor='middle' font-size='12' fill='#725f4a'>92</text><line x1='930.00' y1='405' x2='930.00' y2='45' stroke='#f4ede2' /><text x='930.00' y='425' text-anchor='middle' font-size='12' fill='#725f4a'>120</text>
+  <line x1="70" y1="405" x2="930" y2="405" stroke="#8d7760" stroke-width="1.5" />
+  <line x1="70" y1="45" x2="70" y2="405" stroke="#8d7760" stroke-width="1.5" />
+  <path d='M 70.00,45.00 L 148.18,326.20 L 226.36,208.49 L 304.55,291.73 L 382.73,365.94 L 460.91,220.53 L 539.09,250.50 L 617.27,377.83 L 695.45,405.00 L 773.64,339.48 L 851.82,262.71 L 930.00,324.49' fill='none' stroke='#7a4cc2' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round' />
+  <line x1='70' y1='24' x2='90' y2='24' stroke='#7a4cc2' stroke-width='4' /><text x='98' y='28' font-size='13' fill='#2e261d'>step time</text>
+  <text x="480.00" y="448" text-anchor="middle" font-size="13" fill="#725f4a">step</text>
+  <text x="18" y="230.00" transform="rotate(-90 18 230.00)" text-anchor="middle" font-size="13" fill="#725f4a">seconds</text>
+</svg>
