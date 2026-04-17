@@ -64,7 +64,20 @@
         "reward_mean": 0.7638199925422668,
         "step_time_seconds": 58.123529691807924,
         "mean_completion_length": 1367.8
+      },
+      {
+        "step_label": "step_15",
+        "loss": 0.0341,
+        "reward_mean": 0.9102050065994263,
+        "step_time_seconds": 55.94732945170254,
+        "mean_completion_length": 1360.75
       }
-    ]
+    ],
+    "current_runtime_status": {
+      "completed_steps": 15,
+      "target_steps": 100,
+      "gpu_memory_used_mib": 33483,
+      "gpu_utilization_percent": 70
+    }
   }
 }

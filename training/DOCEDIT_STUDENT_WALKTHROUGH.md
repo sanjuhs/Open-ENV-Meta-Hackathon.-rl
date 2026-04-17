@@ -342,18 +342,24 @@ Observed on the H200:
 - GRPO is running at roughly `58s` to `66s` per logged step early on
 - first logged reward mean: about `0.8422`
 - second logged reward mean: about `0.7638`
-- first two logged loss values:
+- third logged reward mean: about `0.9102`
+- current live status during this write-up:
+  - `15 / 100` steps completed
+  - about `33.5 GB` VRAM in use
+  - about `70%` GPU utilization
+- first three logged loss values:
   - step 5: `0.0030`
   - step 10: `0.0423`
+  - step 15: `0.0341`
 
 ### GRPO reward chart
 
 ```mermaid
 xychart-beta
     title "GRPO Mean Reward Snapshot"
-    x-axis ["Step 5", "Step 10"]
-    y-axis "Reward" 0.70 --> 0.90
-    bar [0.8422, 0.7638]
+    x-axis ["Step 5", "Step 10", "Step 15"]
+    y-axis "Reward" 0.70 --> 0.95
+    bar [0.8422, 0.7638, 0.9102]
 ```
 
 ### GRPO step time chart
@@ -361,9 +367,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "GRPO Step Time Snapshot"
-    x-axis ["Step 5", "Step 10"]
+    x-axis ["Step 5", "Step 10", "Step 15"]
     y-axis "Seconds" 50 --> 70
-    bar [66.42, 58.12]
+    bar [66.42, 58.12, 55.95]
 ```
 
 ### Important note for the talk
