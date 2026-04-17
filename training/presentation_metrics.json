@@ -49,6 +49,32 @@
       "mean_collateral_damage": 0.0238
     }
   },
+  "quick_eval_3case": {
+    "base_qwen25_3b": {
+      "cases": 3,
+      "exact_match_rate": 0.0,
+      "mean_similarity": 0.9358,
+      "mean_composite_score": 0.7790333333333334,
+      "mean_edit_accuracy": 0.4444333333333333,
+      "mean_collateral_damage": 0.2
+    },
+    "sft_lora": {
+      "cases": 3,
+      "exact_match_rate": 0.3333333333333333,
+      "mean_similarity": 0.9964,
+      "mean_composite_score": 0.9108999999999999,
+      "mean_edit_accuracy": 0.6666666666666666,
+      "mean_collateral_damage": 0.015866666666666668
+    },
+    "grpo_lora": {
+      "cases": 3,
+      "exact_match_rate": 0.3333333333333333,
+      "mean_similarity": 0.9964,
+      "mean_composite_score": 0.9148666666666667,
+      "mean_edit_accuracy": 0.6666666666666666,
+      "mean_collateral_damage": 0.0
+    }
+  },
   "grpo_snapshot": {
     "train_runtime_seconds": 5562.7484,
     "train_loss_final": 0.03505843415856361,
