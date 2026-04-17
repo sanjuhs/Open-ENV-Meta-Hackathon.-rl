@@ -50,6 +50,8 @@
     }
   },
   "grpo_snapshot": {
+    "train_runtime_seconds": 5562.7484,
+    "train_loss_final": 0.03505843415856361,
     "logged_points": [
       {
         "step_label": "step_5",
@@ -71,13 +73,26 @@
         "reward_mean": 0.9102050065994263,
         "step_time_seconds": 55.94732945170254,
         "mean_completion_length": 1360.75
+      },
+      {
+        "step_label": "step_100",
+        "loss": 0.0216,
+        "reward_mean": 0.7956650018692016,
+        "step_time_seconds": 61.7120869519189,
+        "mean_completion_length": 1248.75
       }
     ],
     "current_runtime_status": {
-      "completed_steps": 15,
+      "completed_steps": 100,
       "target_steps": 100,
-      "gpu_memory_used_mib": 33483,
-      "gpu_utilization_percent": 70
-    }
+      "gpu_memory_used_mib": 84171,
+      "gpu_utilization_percent": 69
+    },
+    "checkpoints_written": [
+      "checkpoint-25",
+      "checkpoint-50",
+      "checkpoint-75",
+      "checkpoint-100"
+    ]
   }
 }
