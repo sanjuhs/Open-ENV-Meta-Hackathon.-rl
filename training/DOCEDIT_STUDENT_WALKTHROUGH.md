@@ -511,6 +511,9 @@ Why one repo?
 - easy to compare versions
 - easy to show progression from SFT to GRPO
 
+Live repo for this run:
+- [sanjuhs/docedit-qwen25-3b-checkpoints](https://huggingface.co/sanjuhs/docedit-qwen25-3b-checkpoints)
+
 ---
 
 ## 15. What To Say If Someone Asks "Why Not Just Use GPT-5.4?"
