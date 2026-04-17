@@ -104,7 +104,6 @@ def main() -> None:
         save_steps=args.save_steps,
         save_total_limit=3,
         bf16=True,
-        max_prompt_length=args.max_prompt_length,
         max_completion_length=args.max_completion_length,
         num_generations=args.num_generations,
         report_to="none",
