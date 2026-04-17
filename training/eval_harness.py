@@ -164,6 +164,100 @@ class OpenAICompatibleChatAdapter(Adapter):
         }
 
 
+class TransformersLocalAdapter(Adapter):
+    """Run local Hugging Face generation without a separate serving stack."""
+
+    def __init__(
+        self,
+        *,
+        model: str,
+        adapter_path: str = "",
+        max_output_tokens: int = 2_048,
+        temperature: float = 0.0,
+        trust_remote_code: bool = True,
+        load_in_4bit: bool = True,
+    ) -> None:
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+
+        self.torch = torch
+        self.model_id = model
+        self.adapter_path = adapter_path
+        self.max_output_tokens = max_output_tokens
+        self.temperature = temperature
+        self.name = f"transformers_local:{Path(adapter_path).name if adapter_path else model}"
+
+        tokenizer_id = adapter_path or model
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            tokenizer_id,
+            trust_remote_code=trust_remote_code,
+        )
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+
+        model_kwargs: dict[str, Any] = {
+            "trust_remote_code": trust_remote_code,
+            "torch_dtype": torch.bfloat16 if torch.cuda.is_available() else torch.float32,
+            "device_map": "auto" if torch.cuda.is_available() else None,
+        }
+        if load_in_4bit and torch.cuda.is_available():
+            model_kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True,
+                bnb_4bit_compute_dtype=torch.bfloat16,
+            )
+
+        if adapter_path:
+            from peft import AutoPeftModelForCausalLM
+
+            self.model = AutoPeftModelForCausalLM.from_pretrained(
+                adapter_path,
+                is_trainable=False,
+                **model_kwargs,
+            )
+        else:
+            self.model = AutoModelForCausalLM.from_pretrained(model, **model_kwargs)
+        self.model.eval()
+
+    def solve(self, task: dict[str, Any]) -> tuple[str, dict[str, Any]]:
+        if getattr(self.tokenizer, "chat_template", None):
+            prompt = self.tokenizer.apply_chat_template(
+                build_direct_rewrite_messages(task),
+                tokenize=False,
+                add_generation_prompt=True,
+            )
+        else:
+            prompt = build_direct_rewrite_prompt(task)
+
+        inputs = self.tokenizer(prompt, return_tensors="pt")
+        if self.torch.cuda.is_available():
+            inputs = {key: value.to(self.model.device) for key, value in inputs.items()}
+
+        generate_kwargs = {
+            **inputs,
+            "max_new_tokens": self.max_output_tokens,
+            "do_sample": self.temperature > 0,
+            "pad_token_id": self.tokenizer.pad_token_id,
+            "eos_token_id": self.tokenizer.eos_token_id,
+        }
+        if self.temperature > 0:
+            generate_kwargs["temperature"] = self.temperature
+
+        with self.torch.inference_mode():
+            outputs = self.model.generate(**generate_kwargs)
+
+        prompt_length = inputs["input_ids"].shape[1]
+        completion_tokens = outputs[0][prompt_length:]
+        raw_text = self.tokenizer.decode(completion_tokens, skip_special_tokens=True)
+        edited_document = extract_document_from_completion(raw_text)
+        return edited_document, {
+            "model": self.model_id,
+            "adapter_path": self.adapter_path,
+            "backend": "transformers_local",
+        }
+
+
 def load_manifest(path: Path) -> list[BenchmarkCase]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     cases: list[BenchmarkCase] = []

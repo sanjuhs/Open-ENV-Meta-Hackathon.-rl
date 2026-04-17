@@ -26,6 +26,7 @@ from training.eval_harness import (  # noqa: E402
     OpenAICompatibleChatAdapter,
     OpenAIResponsesAdapter,
     OracleAdapter,
+    TransformersLocalAdapter,
     evaluate_cases,
     load_manifest,
     summarize,
@@ -50,7 +51,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--adapter",
         default="copy_source",
-        choices=("copy_source", "oracle_target", "openai_responses", "openai_compatible"),
+        choices=(
+            "copy_source",
+            "oracle_target",
+            "openai_responses",
+            "openai_compatible",
+            "transformers_local",
+        ),
         help="Adapter backend to run.",
     )
     parser.add_argument(
@@ -64,9 +71,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--base-url", default="http://127.0.0.1:8000")
     parser.add_argument("--api-key", default="")
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
+    parser.add_argument("--adapter-path", default="")
     parser.add_argument("--max-output-tokens", type=int, default=8_192)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--timeout-seconds", type=int, default=180)
+    parser.add_argument("--no-4bit", action="store_true")
     return parser
 
 
@@ -111,6 +120,14 @@ def select_adapter(args):
             max_tokens=args.max_output_tokens,
             temperature=args.temperature,
             timeout_seconds=args.timeout_seconds,
+        )
+    if name == "transformers_local":
+        return TransformersLocalAdapter(
+            model=args.model,
+            adapter_path=args.adapter_path,
+            max_output_tokens=args.max_output_tokens,
+            temperature=args.temperature,
+            load_in_4bit=not args.no_4bit,
         )
     raise ValueError(f"Unknown adapter: {name}")
 
