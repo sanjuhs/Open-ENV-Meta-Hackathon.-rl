@@ -1,0 +1,3565 @@
+{
+  "benchmark_version": "docedit_benchmark_v1",
+  "domains": [
+    "legal",
+    "pharma",
+    "business"
+  ],
+  "difficulties": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "splits": {
+    "train": [
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_00_doc100000_corr2378757",
+        "doc_seed": 100000,
+        "corruption_seed": 2378757,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'propreitary' \u2192 'proprietary', 'corparation' \u2192 'corporation'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_01_doc100001_corr3310186",
+        "doc_seed": 100001,
+        "corruption_seed": 3310186,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 3,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_02_doc100002_corr1620668",
+        "doc_seed": 100002,
+        "corruption_seed": 1620668,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case",
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'assesment' \u2192 'assessment'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_03_doc100003_corr3035841",
+        "doc_seed": 100003,
+        "corruption_seed": 3035841,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case",
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Defendent' \u2192 'Defendant'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_04_doc100004_corr6758156",
+        "doc_seed": 100004,
+        "corruption_seed": 6758156,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'arbitartion' \u2192 'arbitration', 'Agremeent' \u2192 'AGREEMENT'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_05_doc100005_corr1263482",
+        "doc_seed": 100005,
+        "corruption_seed": 1263482,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'plantiff' \u2192 'plaintiff'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_06_doc100006_corr6324799",
+        "doc_seed": 100006,
+        "corruption_seed": 6324799,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'agremeent' \u2192 'agreement'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d1_07_doc100007_corr10360465",
+        "doc_seed": 100007,
+        "corruption_seed": 10360465,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 1,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_00_doc100008_corr3154514",
+        "doc_seed": 100008,
+        "corruption_seed": 3154514,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 3,
+        "corruption_types": [
+          "content_insert"
+        ],
+        "instruction": "Remove 3 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_01_doc100009_corr3787419",
+        "doc_seed": 100009,
+        "corruption_seed": 3787419,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 7,
+        "corruption_types": [
+          "names",
+          "content_delete",
+          "content_insert"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Patricia' should be 'Emily', 'Edge Associates' should be 'Vertex Partners'. Restore 3 paragraph(s) that were removed from the document. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_02_doc100010_corr4372957",
+        "doc_seed": 100010,
+        "corruption_seed": 4372957,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 4,
+        "corruption_types": [
+          "spelling",
+          "content_insert",
+          "punctuation",
+          "content_delete"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Assesment' \u2192 'Assessment'. Fix 1 punctuation error(s). Restore 1 paragraph(s) that were removed from the document. Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_03_doc100011_corr2339871",
+        "doc_seed": 100011,
+        "corruption_seed": 2339871,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_insert",
+          "spelling",
+          "names",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Defendent' \u2192 'Defendant', 'defendent' \u2192 'defendant'. Fix 1 capitalization error(s) \u2014 some text has incorrect case. Correct 1 wrong name(s)/entity(ies): 'Robert' should be 'James'. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_04_doc100012_corr7321542",
+        "doc_seed": 100012,
+        "corruption_seed": 7321542,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 5,
+        "corruption_types": [
+          "spelling",
+          "names",
+          "punctuation",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'corparation' \u2192 'corporation', 'proffesional' \u2192 'professional'. Fix 1 capitalization error(s) \u2014 some text has incorrect case. Correct 1 wrong name(s)/entity(ies): 'Thomas' should be 'David'. Fix 1 punctuation error(s).",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_05_doc100013_corr2394337",
+        "doc_seed": 100013,
+        "corruption_seed": 2394337,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 6 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_06_doc100014_corr7570136",
+        "doc_seed": 100014,
+        "corruption_seed": 7570136,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 2,
+        "corruption_types": [
+          "names"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Patricia' should be 'Emily', 'LocalTech Services' should be 'GlobalTech Solutions'.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d2_07_doc100015_corr5748697",
+        "doc_seed": 100015,
+        "corruption_seed": 5748697,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 6,
+        "corruption_types": [
+          "punctuation"
+        ],
+        "instruction": "Fix 6 punctuation error(s).",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_00_doc100016_corr6003154",
+        "doc_seed": 100016,
+        "corruption_seed": 6003154,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 0,
+        "corruption_types": [
+          "names"
+        ],
+        "instruction": "The document appears correct. No edits needed.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_01_doc100017_corr3729509",
+        "doc_seed": 100017,
+        "corruption_seed": 3729509,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 4,
+        "corruption_types": [
+          "formatting_wrong",
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (italic). Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_02_doc100018_corr9666657",
+        "doc_seed": 100018,
+        "corruption_seed": 9666657,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_03_doc100019_corr8506350",
+        "doc_seed": 100019,
+        "corruption_seed": 8506350,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 13,
+        "corruption_types": [
+          "spelling",
+          "content_delete"
+        ],
+        "instruction": "Fix 6 spelling error(s): 'arbitartion' \u2192 'arbitration', 'corparation' \u2192 'corporation', 'agremeent' \u2192 'agreement' (and 3 more). Restore 7 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_04_doc100020_corr8087811",
+        "doc_seed": 100020,
+        "corruption_seed": 8087811,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 9,
+        "corruption_types": [
+          "names",
+          "content_delete"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Jennifer' should be 'Sarah', 'Sarah' should be 'Jennifer'. Restore 7 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_05_doc100021_corr5755074",
+        "doc_seed": 100021,
+        "corruption_seed": 5755074,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 11,
+        "corruption_types": [
+          "spelling",
+          "case",
+          "content_delete"
+        ],
+        "instruction": "Fix 4 spelling error(s): 'intelectual' \u2192 'intellectual', 'arbitartion' \u2192 'arbitration', 'preformance' \u2192 'performance' (and 1 more). Fix 4 capitalization error(s) \u2014 some text has incorrect case. Restore 3 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_06_doc100022_corr8479161",
+        "doc_seed": 100022,
+        "corruption_seed": 8479161,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 9,
+        "corruption_types": [
+          "names",
+          "case",
+          "formatting_wrong",
+          "spelling"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'Departmnet' \u2192 'Department', 'Departmnet' \u2192 'DEPARTMENT', 'oppertunity' \u2192 'opportunity'. Fix 4 capitalization error(s) \u2014 some text has incorrect case. Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d3_07_doc100023_corr5069786",
+        "doc_seed": 100023,
+        "corruption_seed": 5069786,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 8,
+        "corruption_types": [
+          "punctuation",
+          "formatting_strip",
+          "content_delete",
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Restore 2 paragraph(s) that were removed from the document. Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_00_doc100024_corr5658837",
+        "doc_seed": 100024,
+        "corruption_seed": 5658837,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 5,
+        "corruption_types": [
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 5 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_01_doc100025_corr9444747",
+        "doc_seed": 100025,
+        "corruption_seed": 9444747,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 20,
+        "corruption_types": [
+          "spelling",
+          "content_delete",
+          "spacing"
+        ],
+        "instruction": "Fix 7 spelling error(s): 'plantiff' \u2192 'plaintiff', 'defendent' \u2192 'defendant', 'Agremeent' \u2192 'Agreement' (and 4 more). Restore 7 paragraph(s) that were removed from the document. Fix 6 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_02_doc100026_corr5554429",
+        "doc_seed": 100026,
+        "corruption_seed": 5554429,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 15,
+        "corruption_types": [
+          "names",
+          "content_delete",
+          "punctuation",
+          "alignment"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'Linda' should be 'Maria'. Fix 5 punctuation error(s). Restore 5 paragraph(s) that were removed from the document. Fix 4 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_03_doc100027_corr9398769",
+        "doc_seed": 100027,
+        "corruption_seed": 9398769,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 18,
+        "corruption_types": [
+          "formatting_wrong",
+          "names",
+          "punctuation",
+          "alignment"
+        ],
+        "instruction": "Correct 3 wrong name(s)/entity(ies): 'Patricia' should be 'Emily', 'Thomas' should be 'David'. Fix 5 punctuation error(s). Fix 5 incorrect formatting tag(s) (wrong type or color). Fix 5 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_04_doc100028_corr2112040",
+        "doc_seed": 100028,
+        "corruption_seed": 2112040,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_05_doc100029_corr4104197",
+        "doc_seed": 100029,
+        "corruption_seed": 4104197,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 16,
+        "corruption_types": [
+          "punctuation",
+          "formatting_wrong",
+          "content_delete",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 6 punctuation error(s). Restore 6 paragraph(s) that were removed from the document. Restore 2 missing formatting tag(s) (italic). Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_06_doc100030_corr6909101",
+        "doc_seed": 100030,
+        "corruption_seed": 6909101,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 21,
+        "corruption_types": [
+          "spacing",
+          "punctuation"
+        ],
+        "instruction": "Fix 10 punctuation error(s). Fix 11 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d4_07_doc100031_corr2858653",
+        "doc_seed": 100031,
+        "corruption_seed": 2858653,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 15,
+        "corruption_types": [
+          "names",
+          "alignment",
+          "content_delete",
+          "content_insert"
+        ],
+        "instruction": "Correct 3 wrong name(s)/entity(ies): 'Jennifer' should be 'Sarah', 'Sarah' should be 'Jennifer'. Restore 4 paragraph(s) that were removed from the document. Remove 4 junk paragraph(s) that don't belong. Fix 4 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_00_doc100032_corr5947541",
+        "doc_seed": 100032,
+        "corruption_seed": 5947541,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 27,
+        "corruption_types": [
+          "punctuation",
+          "names",
+          "content_delete"
+        ],
+        "instruction": "Correct 3 wrong name(s)/entity(ies): 'Jennifer' should be 'Sarah', 'Sarah' should be 'Jennifer'. Fix 12 punctuation error(s). Restore 12 paragraph(s) that were removed from the document.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_01_doc100033_corr1689243",
+        "doc_seed": 100033,
+        "corruption_seed": 1689243,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 26,
+        "corruption_types": [
+          "formatting_strip",
+          "case"
+        ],
+        "instruction": "Fix 19 capitalization error(s) \u2014 some text has incorrect case. Restore 7 missing formatting tag(s) (bold, underline).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_02_doc100034_corr5135158",
+        "doc_seed": 100034,
+        "corruption_seed": 5135158,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 21,
+        "corruption_types": [
+          "spacing",
+          "names",
+          "punctuation",
+          "alignment"
+        ],
+        "instruction": "Fix 7 punctuation error(s). Fix 7 paragraph alignment error(s). Fix 7 paragraph spacing error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_03_doc100035_corr5848559",
+        "doc_seed": 100035,
+        "corruption_seed": 5848559,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 24,
+        "corruption_types": [
+          "pdf_artifacts",
+          "alignment"
+        ],
+        "instruction": "Fix 12 paragraph alignment error(s). Clean up 12 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_04_doc100036_corr5417605",
+        "doc_seed": 100036,
+        "corruption_seed": 5417605,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_05_doc100037_corr1169692",
+        "doc_seed": 100037,
+        "corruption_seed": 1169692,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 9,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 9 spelling error(s): 'Defendent' \u2192 'Defendant', 'Arbitartion' \u2192 'Arbitration', 'Plantiff' \u2192 'Plaintiff' (and 6 more).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_06_doc100038_corr2796133",
+        "doc_seed": 100038,
+        "corruption_seed": 2796133,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 26,
+        "corruption_types": [
+          "spacing",
+          "junk_chars",
+          "formatting_strip",
+          "punctuation"
+        ],
+        "instruction": "Fix 7 punctuation error(s). Restore 4 missing formatting tag(s) (bold). Fix 8 paragraph spacing error(s). Remove invisible junk characters (zero-width spaces, BOMs) from 7 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d5_07_doc100039_corr2823219",
+        "doc_seed": 100039,
+        "corruption_seed": 2823219,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 20,
+        "corruption_types": [
+          "spacing"
+        ],
+        "instruction": "Fix 20 paragraph spacing error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_00_doc100040_corr5636601",
+        "doc_seed": 100040,
+        "corruption_seed": 5636601,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 40,
+        "corruption_types": [
+          "names",
+          "punctuation",
+          "content_delete",
+          "formatting_strip"
+        ],
+        "instruction": "Correct 4 wrong name(s)/entity(ies): 'Robert' should be 'James', 'James' should be 'Robert'. Fix 18 punctuation error(s). Restore 17 paragraph(s) that were removed from the document. Restore 1 missing formatting tag(s) (bold).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_01_doc100041_corr3758626",
+        "doc_seed": 100041,
+        "corruption_seed": 3758626,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 40,
+        "corruption_types": [
+          "pdf_artifacts",
+          "junk_chars"
+        ],
+        "instruction": "Clean up 21 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging). Remove invisible junk characters (zero-width spaces, BOMs) from 19 location(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_02_doc100042_corr9904567",
+        "doc_seed": 100042,
+        "corruption_seed": 9904567,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 36,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 36 paragraph(s) that were removed from the document.",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_03_doc100043_corr10712451",
+        "doc_seed": 100043,
+        "corruption_seed": 10712451,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 26,
+        "corruption_types": [
+          "case",
+          "formatting_strip",
+          "spacing"
+        ],
+        "instruction": "Fix 12 capitalization error(s) \u2014 some text has incorrect case. Restore 2 missing formatting tag(s) (bold). Fix 12 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_04_doc100044_corr5356738",
+        "doc_seed": 100044,
+        "corruption_seed": 5356738,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 23,
+        "corruption_types": [
+          "names",
+          "pdf_artifacts"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'Patricia' should be 'Emily'. Clean up 22 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_05_doc100045_corr8853902",
+        "doc_seed": 100045,
+        "corruption_seed": 8853902,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 24,
+        "corruption_types": [
+          "junk_chars",
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 4 incorrect formatting tag(s) (wrong type or color). Remove invisible junk characters (zero-width spaces, BOMs) from 20 location(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_06_doc100046_corr3657047",
+        "doc_seed": 100046,
+        "corruption_seed": 3657047,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 36,
+        "corruption_types": [
+          "punctuation",
+          "alignment",
+          "content_insert"
+        ],
+        "instruction": "Fix 14 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Fix 18 paragraph alignment error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_legal_d6_07_doc100047_corr8640613",
+        "doc_seed": 100047,
+        "corruption_seed": 8640613,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_00_doc100048_corr2991619",
+        "doc_seed": 100048,
+        "corruption_seed": 2991619,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_01_doc100049_corr9142781",
+        "doc_seed": 100049,
+        "corruption_seed": 9142781,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'efficasy' \u2192 'efficacy', 'regulatary' \u2192 'regulatory', 'clinicla' \u2192 'clinical'.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_02_doc100050_corr1702990",
+        "doc_seed": 100050,
+        "corruption_seed": 1702990,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 3,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_03_doc100051_corr7840628",
+        "doc_seed": 100051,
+        "corruption_seed": 7840628,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'cardivascular' \u2192 'cardiovascular'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_04_doc100052_corr9903339",
+        "doc_seed": 100052,
+        "corruption_seed": 9903339,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Experiance' \u2192 'Experience'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_05_doc100053_corr7446095",
+        "doc_seed": 100053,
+        "corruption_seed": 7446095,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'advsere' \u2192 'adverse'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_06_doc100054_corr6103761",
+        "doc_seed": 100054,
+        "corruption_seed": 6103761,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Clinicla' \u2192 'CLINICAL'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d1_07_doc100055_corr8714457",
+        "doc_seed": 100055,
+        "corruption_seed": 8714457,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 1,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Advsere' \u2192 'ADVERSE'.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_00_doc100056_corr10759856",
+        "doc_seed": 100056,
+        "corruption_seed": 10759856,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_insert",
+          "spelling",
+          "case",
+          "content_delete"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'efficasy' \u2192 'efficacy'. Fix 1 capitalization error(s) \u2014 some text has incorrect case. Restore 1 paragraph(s) that were removed from the document. Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_01_doc100057_corr4617637",
+        "doc_seed": 100057,
+        "corruption_seed": 4617637,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "punctuation",
+          "names",
+          "case",
+          "spelling"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'regulatary' \u2192 'regulatory', 'signifcant' \u2192 'significant'. Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s).",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_02_doc100058_corr1937497",
+        "doc_seed": 100058,
+        "corruption_seed": 1937497,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 7,
+        "corruption_types": [
+          "content_delete",
+          "case",
+          "punctuation"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Restore 3 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_03_doc100059_corr8107444",
+        "doc_seed": 100059,
+        "corruption_seed": 8107444,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 6,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 6 spelling error(s): 'Clinicla' \u2192 'Clinical', 'advsere' \u2192 'adverse', 'Advsere' \u2192 'ADVERSE' (and 3 more).",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_04_doc100060_corr10244011",
+        "doc_seed": 100060,
+        "corruption_seed": 10244011,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 5,
+        "corruption_types": [
+          "punctuation",
+          "case",
+          "content_insert"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_05_doc100061_corr10090834",
+        "doc_seed": 100061,
+        "corruption_seed": 10090834,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling",
+          "content_insert"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'advsere' \u2192 'adverse', 'cardivascular' \u2192 'cardiovascular'. Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_06_doc100062_corr8616287",
+        "doc_seed": 100062,
+        "corruption_seed": 8616287,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 5,
+        "corruption_types": [
+          "case",
+          "content_insert",
+          "content_delete"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Restore 1 paragraph(s) that were removed from the document. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d2_07_doc100063_corr6894388",
+        "doc_seed": 100063,
+        "corruption_seed": 6894388,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 6 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_00_doc100064_corr9482149",
+        "doc_seed": 100064,
+        "corruption_seed": 9482149,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 8,
+        "corruption_types": [
+          "punctuation",
+          "content_insert"
+        ],
+        "instruction": "Fix 4 punctuation error(s). Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_01_doc100065_corr8040678",
+        "doc_seed": 100065,
+        "corruption_seed": 8040678,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 11,
+        "corruption_types": [
+          "content_delete",
+          "content_insert"
+        ],
+        "instruction": "Restore 7 paragraph(s) that were removed from the document. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_02_doc100066_corr2762396",
+        "doc_seed": 100066,
+        "corruption_seed": 2762396,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 9,
+        "corruption_types": [
+          "punctuation",
+          "content_insert",
+          "names"
+        ],
+        "instruction": "Fix 5 punctuation error(s). Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_03_doc100067_corr922552",
+        "doc_seed": 100067,
+        "corruption_seed": 922552,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "formatting_wrong",
+          "case",
+          "content_insert",
+          "names"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Remove 2 junk paragraph(s) that don't belong. Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_04_doc100068_corr9921397",
+        "doc_seed": 100068,
+        "corruption_seed": 9921397,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 12,
+        "corruption_types": [
+          "punctuation",
+          "formatting_wrong",
+          "content_delete"
+        ],
+        "instruction": "Fix 4 punctuation error(s). Restore 4 paragraph(s) that were removed from the document. Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_05_doc100069_corr2920723",
+        "doc_seed": 100069,
+        "corruption_seed": 2920723,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 11,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 11 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_06_doc100070_corr5448411",
+        "doc_seed": 100070,
+        "corruption_seed": 5448411,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 14,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 14 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d3_07_doc100071_corr6800425",
+        "doc_seed": 100071,
+        "corruption_seed": 6800425,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "formatting_strip",
+          "formatting_wrong"
+        ],
+        "instruction": "Restore 4 missing formatting tag(s) (bold, highlight).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_00_doc100072_corr3485710",
+        "doc_seed": 100072,
+        "corruption_seed": 3485710,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 10,
+        "corruption_types": [
+          "names",
+          "spelling",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'Efficasy' \u2192 'EFFICACY', 'signifcant' \u2192 'significant', 'Clinicla' \u2192 'CLINICAL' (and 2 more). Correct 1 wrong name(s)/entity(ies): 'BioLegacy Research' should be 'BioGenesis Therapeutics'. Restore 4 missing formatting tag(s) (bold, highlight).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_01_doc100073_corr1732171",
+        "doc_seed": 100073,
+        "corruption_seed": 1732171,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 17,
+        "corruption_types": [
+          "punctuation",
+          "formatting_strip",
+          "content_insert",
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 5 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Restore 4 missing formatting tag(s) (bold). Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_02_doc100074_corr2175706",
+        "doc_seed": 100074,
+        "corruption_seed": 2175706,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 10,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 10 spelling error(s): 'advsere' \u2192 'adverse', 'signifcant' \u2192 'significant', 'Efficasy' \u2192 'EFFICACY' (and 7 more).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_03_doc100075_corr8634271",
+        "doc_seed": 100075,
+        "corruption_seed": 8634271,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 14,
+        "corruption_types": [
+          "case",
+          "spacing",
+          "names"
+        ],
+        "instruction": "Fix 7 capitalization error(s) \u2014 some text has incorrect case. Fix 7 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_04_doc100076_corr3379771",
+        "doc_seed": 100076,
+        "corruption_seed": 3379771,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 19,
+        "corruption_types": [
+          "case",
+          "punctuation",
+          "spelling",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'Cardivascular' \u2192 'Cardiovascular', 'Experiance' \u2192 'Experience', 'Cardivascular' \u2192 'CARDIOVASCULAR' (and 2 more). Fix 5 capitalization error(s) \u2014 some text has incorrect case. Fix 5 punctuation error(s). Restore 4 missing formatting tag(s) (italic, bold, highlight).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_05_doc100077_corr3394883",
+        "doc_seed": 100077,
+        "corruption_seed": 3394883,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 15,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 15 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_06_doc100078_corr6137420",
+        "doc_seed": 100078,
+        "corruption_seed": 6137420,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 8,
+        "corruption_types": [
+          "formatting_wrong",
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d4_07_doc100079_corr3865590",
+        "doc_seed": 100079,
+        "corruption_seed": 3865590,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 21,
+        "corruption_types": [
+          "punctuation",
+          "case",
+          "content_insert",
+          "spelling"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'Clinicla' \u2192 'CLINICAL', 'efficasy' \u2192 'efficacy', 'regulatary' \u2192 'regulatory' (and 2 more). Fix 6 capitalization error(s) \u2014 some text has incorrect case. Fix 6 punctuation error(s). Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_00_doc100080_corr1282954",
+        "doc_seed": 100080,
+        "corruption_seed": 1282954,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 25,
+        "corruption_types": [
+          "formatting_strip",
+          "pdf_artifacts"
+        ],
+        "instruction": "Restore 10 missing formatting tag(s) (italic, bold, highlight). Clean up 15 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_01_doc100081_corr3231585",
+        "doc_seed": 100081,
+        "corruption_seed": 3231585,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 0,
+        "corruption_types": [
+          "names"
+        ],
+        "instruction": "The document appears correct. No edits needed.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_02_doc100082_corr3070449",
+        "doc_seed": 100082,
+        "corruption_seed": 3070449,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 23,
+        "corruption_types": [
+          "content_insert",
+          "case"
+        ],
+        "instruction": "Fix 19 capitalization error(s) \u2014 some text has incorrect case. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_03_doc100083_corr8417553",
+        "doc_seed": 100083,
+        "corruption_seed": 8417553,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 27,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 27 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_04_doc100084_corr3797283",
+        "doc_seed": 100084,
+        "corruption_seed": 3797283,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_05_doc100085_corr10637335",
+        "doc_seed": 100085,
+        "corruption_seed": 10637335,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 20,
+        "corruption_types": [
+          "junk_chars"
+        ],
+        "instruction": "Remove invisible junk characters (zero-width spaces, BOMs) from 20 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_06_doc100086_corr2058660",
+        "doc_seed": 100086,
+        "corruption_seed": 2058660,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 14,
+        "corruption_types": [
+          "spelling",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 10 spelling error(s): 'requirments' \u2192 'requirements', 'efficasy' \u2192 'efficacy', 'Clinicla' \u2192 'CLINICAL' (and 7 more). Restore 4 missing formatting tag(s) (bold, highlight).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d5_07_doc100087_corr8595842",
+        "doc_seed": 100087,
+        "corruption_seed": 8595842,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 22,
+        "corruption_types": [
+          "spacing",
+          "spelling"
+        ],
+        "instruction": "Fix 10 spelling error(s): 'cardivascular' \u2192 'cardiovascular', 'Clinicla' \u2192 'CLINICAL', 'efficasy' \u2192 'efficacy' (and 7 more). Fix 12 paragraph spacing error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_00_doc100088_corr2222732",
+        "doc_seed": 100088,
+        "corruption_seed": 2222732,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 8,
+        "corruption_types": [
+          "punctuation"
+        ],
+        "instruction": "Fix 8 punctuation error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_01_doc100089_corr2705231",
+        "doc_seed": 100089,
+        "corruption_seed": 2705231,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 65,
+        "corruption_types": [
+          "alignment",
+          "spacing",
+          "punctuation"
+        ],
+        "instruction": "Fix 13 punctuation error(s). Fix 26 paragraph alignment error(s). Fix 26 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_02_doc100090_corr7958731",
+        "doc_seed": 100090,
+        "corruption_seed": 7958731,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 54,
+        "corruption_types": [
+          "alignment",
+          "formatting_wrong",
+          "case",
+          "punctuation"
+        ],
+        "instruction": "Fix 16 capitalization error(s) \u2014 some text has incorrect case. Fix 13 punctuation error(s). Fix 8 incorrect formatting tag(s) (wrong type or color). Fix 17 paragraph alignment error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_03_doc100091_corr1748537",
+        "doc_seed": 100091,
+        "corruption_seed": 1748537,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 0,
+        "corruption_types": [
+          "names"
+        ],
+        "instruction": "The document appears correct. No edits needed.",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_04_doc100092_corr9467730",
+        "doc_seed": 100092,
+        "corruption_seed": 9467730,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 28,
+        "corruption_types": [
+          "alignment",
+          "formatting_strip",
+          "spacing",
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Restore 4 missing formatting tag(s) (bold, highlight). Fix 10 paragraph alignment error(s). Fix 10 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_05_doc100093_corr7013462",
+        "doc_seed": 100093,
+        "corruption_seed": 7013462,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 52,
+        "corruption_types": [
+          "names",
+          "case",
+          "spacing"
+        ],
+        "instruction": "Fix 26 capitalization error(s) \u2014 some text has incorrect case. Fix 26 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_06_doc100094_corr4018769",
+        "doc_seed": 100094,
+        "corruption_seed": 4018769,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 13,
+        "corruption_types": [
+          "formatting_wrong",
+          "punctuation"
+        ],
+        "instruction": "Fix 9 punctuation error(s). Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_pharma_d6_07_doc100095_corr8608613",
+        "doc_seed": 100095,
+        "corruption_seed": 8608613,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 21,
+        "corruption_types": [
+          "content_delete",
+          "spelling"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Efficasy' \u2192 'EFFICACY', 'Clinicla' \u2192 'CLINICAL'. Restore 19 paragraph(s) that were removed from the document.",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_00_doc100096_corr1371890",
+        "doc_seed": 100096,
+        "corruption_seed": 1371890,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'aquisition' \u2192 'acquisition'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_01_doc100097_corr10761402",
+        "doc_seed": 100097,
+        "corruption_seed": 10761402,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'preformance' \u2192 'performance', 'managment' \u2192 'management'.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_02_doc100098_corr7233207",
+        "doc_seed": 100098,
+        "corruption_seed": 7233207,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case",
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'revnue' \u2192 'revenue'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_03_doc100099_corr3522901",
+        "doc_seed": 100099,
+        "corruption_seed": 3522901,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 1,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_04_doc100100_corr9469649",
+        "doc_seed": 100100,
+        "corruption_seed": 9469649,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'aquisition' \u2192 'acquisition'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_05_doc100101_corr6194689",
+        "doc_seed": 100101,
+        "corruption_seed": 6194689,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_06_doc100102_corr10602998",
+        "doc_seed": 100102,
+        "corruption_seed": 10602998,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d1_07_doc100103_corr1163886",
+        "doc_seed": 100103,
+        "corruption_seed": 1163886,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'preformance' \u2192 'performance'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_00_doc100104_corr3401041",
+        "doc_seed": 100104,
+        "corruption_seed": 3401041,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 5,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'effeciency' \u2192 'efficiency', 'Preformance' \u2192 'Performance', 'signifcant' \u2192 'significant' (and 2 more).",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_01_doc100105_corr10157819",
+        "doc_seed": 100105,
+        "corruption_seed": 10157819,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "content_delete",
+          "content_insert",
+          "names"
+        ],
+        "instruction": "Restore 1 paragraph(s) that were removed from the document. Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_02_doc100106_corr2974253",
+        "doc_seed": 100106,
+        "corruption_seed": 2974253,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "spelling",
+          "punctuation",
+          "case",
+          "content_delete"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'aquisition' \u2192 'acquisition', 'managment' \u2192 'management'. Fix 1 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Restore 1 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_03_doc100107_corr8296243",
+        "doc_seed": 100107,
+        "corruption_seed": 8296243,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "content_insert",
+          "content_delete"
+        ],
+        "instruction": "Restore 1 paragraph(s) that were removed from the document. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_04_doc100108_corr8607012",
+        "doc_seed": 100108,
+        "corruption_seed": 8607012,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 5,
+        "corruption_types": [
+          "case",
+          "content_insert"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_05_doc100109_corr7326895",
+        "doc_seed": 100109,
+        "corruption_seed": 7326895,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_insert",
+          "spelling",
+          "punctuation"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'preformance' \u2192 'performance', 'tranformation' \u2192 'transformation'. Fix 2 punctuation error(s). Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_06_doc100110_corr9177046",
+        "doc_seed": 100110,
+        "corruption_seed": 9177046,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_insert",
+          "names"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Robert' should be 'James', 'James' should be 'Robert'. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d2_07_doc100111_corr5572753",
+        "doc_seed": 100111,
+        "corruption_seed": 5572753,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 4 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_00_doc100112_corr9706297",
+        "doc_seed": 100112,
+        "corruption_seed": 9706297,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 12,
+        "corruption_types": [
+          "formatting_strip",
+          "punctuation",
+          "spelling"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'preformance' \u2192 'performance', 'revnue' \u2192 'revenue', 'managment' \u2192 'management' (and 2 more). Fix 5 punctuation error(s). Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_01_doc100113_corr6665074",
+        "doc_seed": 100113,
+        "corruption_seed": 6665074,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_02_doc100114_corr3890662",
+        "doc_seed": 100114,
+        "corruption_seed": 3890662,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 8,
+        "corruption_types": [
+          "formatting_strip",
+          "punctuation"
+        ],
+        "instruction": "Fix 6 punctuation error(s). Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_03_doc100115_corr6619844",
+        "doc_seed": 100115,
+        "corruption_seed": 6619844,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "formatting_strip",
+          "names",
+          "formatting_wrong"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'Patricia' should be 'Emily'. Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_04_doc100116_corr3711715",
+        "doc_seed": 100116,
+        "corruption_seed": 3711715,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "spelling",
+          "content_delete",
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'tranformation' \u2192 'transformation', 'aquisition' \u2192 'acquisition', 'sufficent' \u2192 'sufficient'. Restore 3 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_05_doc100117_corr2149994",
+        "doc_seed": 100117,
+        "corruption_seed": 2149994,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 11,
+        "corruption_types": [
+          "content_insert",
+          "content_delete",
+          "punctuation"
+        ],
+        "instruction": "Fix 3 punctuation error(s). Restore 4 paragraph(s) that were removed from the document. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_06_doc100118_corr7356198",
+        "doc_seed": 100118,
+        "corruption_seed": 7356198,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 7,
+        "corruption_types": [
+          "spelling",
+          "formatting_wrong",
+          "content_insert",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Preformance' \u2192 'Performance', 'effeciency' \u2192 'efficiency'. Remove 2 junk paragraph(s) that don't belong. Restore 2 missing formatting tag(s) (italic). Fix 1 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d3_07_doc100119_corr1145872",
+        "doc_seed": 100119,
+        "corruption_seed": 1145872,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 14,
+        "corruption_types": [
+          "content_delete",
+          "spelling",
+          "punctuation"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'sufficent' \u2192 'sufficient', 'Revnue' \u2192 'Revenue', 'preformance' \u2192 'performance' (and 2 more). Fix 4 punctuation error(s). Restore 5 paragraph(s) that were removed from the document.",
+        "max_steps": 30
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_00_doc100120_corr10865765",
+        "doc_seed": 100120,
+        "corruption_seed": 10865765,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 14,
+        "corruption_types": [
+          "content_delete",
+          "content_insert"
+        ],
+        "instruction": "Restore 10 paragraph(s) that were removed from the document. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_01_doc100121_corr2630042",
+        "doc_seed": 100121,
+        "corruption_seed": 2630042,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 23,
+        "corruption_types": [
+          "punctuation",
+          "spacing"
+        ],
+        "instruction": "Fix 12 punctuation error(s). Fix 11 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_02_doc100122_corr5535998",
+        "doc_seed": 100122,
+        "corruption_seed": 5535998,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 10,
+        "corruption_types": [
+          "names",
+          "content_insert",
+          "content_delete"
+        ],
+        "instruction": "Restore 6 paragraph(s) that were removed from the document. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_03_doc100123_corr8783356",
+        "doc_seed": 100123,
+        "corruption_seed": 8783356,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 19,
+        "corruption_types": [
+          "case",
+          "punctuation",
+          "formatting_strip",
+          "alignment"
+        ],
+        "instruction": "Fix 6 capitalization error(s) \u2014 some text has incorrect case. Fix 6 punctuation error(s). Restore 2 missing formatting tag(s) (italic, bold). Fix 5 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_04_doc100124_corr4900785",
+        "doc_seed": 100124,
+        "corruption_seed": 4900785,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 13,
+        "corruption_types": [
+          "alignment"
+        ],
+        "instruction": "Fix 13 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_05_doc100125_corr10263488",
+        "doc_seed": 100125,
+        "corruption_seed": 10263488,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 14,
+        "corruption_types": [
+          "formatting_strip",
+          "spelling",
+          "case",
+          "content_delete"
+        ],
+        "instruction": "Fix 4 spelling error(s): 'sufficent' \u2192 'sufficient', 'Revnue' \u2192 'Revenue', 'preformance' \u2192 'performance' (and 1 more). Fix 4 capitalization error(s) \u2014 some text has incorrect case. Restore 4 paragraph(s) that were removed from the document. Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_06_doc100126_corr2858697",
+        "doc_seed": 100126,
+        "corruption_seed": 2858697,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 11,
+        "corruption_types": [
+          "formatting_wrong",
+          "names",
+          "content_insert",
+          "case"
+        ],
+        "instruction": "Fix 5 capitalization error(s) \u2014 some text has incorrect case. Correct 1 wrong name(s)/entity(ies): 'Edge Associates' should be 'Vertex Partners'. Remove 4 junk paragraph(s) that don't belong. Fix 1 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d4_07_doc100127_corr6819369",
+        "doc_seed": 100127,
+        "corruption_seed": 6819369,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 21,
+        "corruption_types": [
+          "punctuation",
+          "spelling",
+          "content_insert",
+          "spacing"
+        ],
+        "instruction": "Fix 6 spelling error(s): 'managment' \u2192 'management', 'aquisition' \u2192 'acquisition', 'sufficent' \u2192 'sufficient' (and 3 more). Fix 6 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Fix 5 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_00_doc100128_corr4873370",
+        "doc_seed": 100128,
+        "corruption_seed": 4873370,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 35,
+        "corruption_types": [
+          "pdf_artifacts",
+          "alignment"
+        ],
+        "instruction": "Fix 17 paragraph alignment error(s). Clean up 18 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_01_doc100129_corr7480731",
+        "doc_seed": 100129,
+        "corruption_seed": 7480731,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 30,
+        "corruption_types": [
+          "junk_chars",
+          "content_delete",
+          "formatting_wrong",
+          "spacing"
+        ],
+        "instruction": "Restore 10 paragraph(s) that were removed from the document. Fix 1 incorrect formatting tag(s) (wrong type or color). Fix 9 paragraph spacing error(s). Remove invisible junk characters (zero-width spaces, BOMs) from 10 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_02_doc100130_corr6746065",
+        "doc_seed": 100130,
+        "corruption_seed": 6746065,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 31,
+        "corruption_types": [
+          "pdf_artifacts",
+          "spacing",
+          "formatting_wrong",
+          "alignment"
+        ],
+        "instruction": "Fix 1 incorrect formatting tag(s) (wrong type or color). Fix 10 paragraph alignment error(s). Fix 10 paragraph spacing error(s). Clean up 10 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_03_doc100131_corr2022072",
+        "doc_seed": 100131,
+        "corruption_seed": 2022072,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 22,
+        "corruption_types": [
+          "spelling",
+          "pdf_artifacts"
+        ],
+        "instruction": "Fix 8 spelling error(s): 'revnue' \u2192 'revenue', 'effeciency' \u2192 'efficiency', 'managment' \u2192 'management' (and 5 more). Clean up 14 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_04_doc100132_corr9484664",
+        "doc_seed": 100132,
+        "corruption_seed": 9484664,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 22,
+        "corruption_types": [
+          "case",
+          "spacing",
+          "junk_chars",
+          "spelling"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'Sufficent' \u2192 'SUFFICIENT', 'preformance' \u2192 'performance', 'aquisition' \u2192 'acquisition' (and 2 more). Fix 6 capitalization error(s) \u2014 some text has incorrect case. Fix 6 paragraph spacing error(s). Remove invisible junk characters (zero-width spaces, BOMs) from 5 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_05_doc100133_corr2483700",
+        "doc_seed": 100133,
+        "corruption_seed": 2483700,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 15,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 15 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_06_doc100134_corr8075093",
+        "doc_seed": 100134,
+        "corruption_seed": 8075093,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 20,
+        "corruption_types": [
+          "pdf_artifacts"
+        ],
+        "instruction": "Clean up 20 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d5_07_doc100135_corr2536472",
+        "doc_seed": 100135,
+        "corruption_seed": 2536472,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 60
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_00_doc100136_corr2477995",
+        "doc_seed": 100136,
+        "corruption_seed": 2477995,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 23,
+        "corruption_types": [
+          "junk_chars"
+        ],
+        "instruction": "Remove invisible junk characters (zero-width spaces, BOMs) from 23 location(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_01_doc100137_corr6158437",
+        "doc_seed": 100137,
+        "corruption_seed": 6158437,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 39,
+        "corruption_types": [
+          "content_insert",
+          "punctuation",
+          "formatting_wrong",
+          "pdf_artifacts"
+        ],
+        "instruction": "Fix 17 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Fix 1 incorrect formatting tag(s) (wrong type or color). Clean up 17 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_02_doc100138_corr10127062",
+        "doc_seed": 100138,
+        "corruption_seed": 10127062,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 28,
+        "corruption_types": [
+          "spelling",
+          "names",
+          "case",
+          "spacing"
+        ],
+        "instruction": "Fix 10 spelling error(s): 'managment' \u2192 'management', 'tranformation' \u2192 'transformation', 'revnue' \u2192 'revenue' (and 7 more). Fix 9 capitalization error(s) \u2014 some text has incorrect case. Fix 9 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_03_doc100139_corr1788802",
+        "doc_seed": 100139,
+        "corruption_seed": 1788802,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 65,
+        "corruption_types": [
+          "junk_chars",
+          "spacing",
+          "alignment"
+        ],
+        "instruction": "Fix 21 paragraph alignment error(s). Fix 21 paragraph spacing error(s). Remove invisible junk characters (zero-width spaces, BOMs) from 23 location(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_04_doc100140_corr5846990",
+        "doc_seed": 100140,
+        "corruption_seed": 5846990,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 56,
+        "corruption_types": [
+          "punctuation",
+          "names",
+          "spacing",
+          "junk_chars"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'William' should be 'Michael'. Fix 17 punctuation error(s). Fix 19 paragraph spacing error(s). Remove invisible junk characters (zero-width spaces, BOMs) from 19 location(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_05_doc100141_corr10100245",
+        "doc_seed": 100141,
+        "corruption_seed": 10100245,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 43,
+        "corruption_types": [
+          "pdf_artifacts",
+          "case",
+          "spacing"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case. Fix 21 paragraph spacing error(s). Clean up 21 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_06_doc100142_corr1830516",
+        "doc_seed": 100142,
+        "corruption_seed": 1830516,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 19,
+        "corruption_types": [
+          "alignment",
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 1 incorrect formatting tag(s) (wrong type or color). Fix 18 paragraph alignment error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "train",
+        "case_id": "train_business_d6_07_doc100143_corr1373295",
+        "doc_seed": 100143,
+        "corruption_seed": 1373295,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 100
+      }
+    ],
+    "validation": [
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d1_00_doc200000_corr6156132",
+        "doc_seed": 200000,
+        "corruption_seed": 6156132,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d1_01_doc200001_corr5720514",
+        "doc_seed": 200001,
+        "corruption_seed": 5720514,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'Defendent' \u2192 'Defendant', 'defendent' \u2192 'defendant', 'Anaylsis' \u2192 'ANALYSIS'.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d2_00_doc200002_corr3385738",
+        "doc_seed": 200002,
+        "corruption_seed": 3385738,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 3,
+        "corruption_types": [
+          "content_insert",
+          "punctuation",
+          "case"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case. Fix 1 punctuation error(s). Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d2_01_doc200003_corr6376475",
+        "doc_seed": 200003,
+        "corruption_seed": 6376475,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_insert",
+          "names",
+          "content_delete",
+          "case"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case. Correct 2 wrong name(s)/entity(ies): 'Neha' should be 'Priya', 'Vikram' should be 'Sanjay'. Restore 1 paragraph(s) that were removed from the document. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d3_00_doc200004_corr8419052",
+        "doc_seed": 200004,
+        "corruption_seed": 8419052,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 14,
+        "corruption_types": [
+          "formatting_wrong",
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'arbitartion' \u2192 'arbitration', 'Defendent' \u2192 'Defendant', 'Plantiff' \u2192 'Plaintiff' (and 2 more). Fix 5 capitalization error(s) \u2014 some text has incorrect case. Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d3_01_doc200005_corr8295061",
+        "doc_seed": 200005,
+        "corruption_seed": 8295061,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d4_00_doc200006_corr7661200",
+        "doc_seed": 200006,
+        "corruption_seed": 7661200,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 12,
+        "corruption_types": [
+          "content_insert",
+          "names",
+          "formatting_strip",
+          "spacing"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Robert' should be 'James', 'James' should be 'Robert'. Remove 4 junk paragraph(s) that don't belong. Restore 2 missing formatting tag(s) (bold). Fix 4 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d4_01_doc200007_corr11895698",
+        "doc_seed": 200007,
+        "corruption_seed": 11895698,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 13,
+        "corruption_types": [
+          "names",
+          "content_insert",
+          "punctuation"
+        ],
+        "instruction": "Correct 2 wrong name(s)/entity(ies): 'Neha' should be 'Priya', 'Arjun' should be 'Raj'. Fix 7 punctuation error(s). Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d5_00_doc200008_corr7218597",
+        "doc_seed": 200008,
+        "corruption_seed": 7218597,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 18,
+        "corruption_types": [
+          "formatting_wrong",
+          "punctuation"
+        ],
+        "instruction": "Fix 13 punctuation error(s). Fix 5 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d5_01_doc200009_corr9824588",
+        "doc_seed": 200009,
+        "corruption_seed": 9824588,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 20,
+        "corruption_types": [
+          "spelling",
+          "formatting_wrong",
+          "alignment"
+        ],
+        "instruction": "Fix 8 spelling error(s): 'Plantiff' \u2192 'Plaintiff', 'Anaylsis' \u2192 'ANALYSIS', 'Agremeent' \u2192 'Agreement' (and 5 more). Fix 4 incorrect formatting tag(s) (wrong type or color). Fix 8 paragraph alignment error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d6_00_doc200010_corr7464667",
+        "doc_seed": 200010,
+        "corruption_seed": 7464667,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 10,
+        "corruption_types": [
+          "formatting_wrong",
+          "names",
+          "content_insert"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'Thomas' should be 'David'. Remove 4 junk paragraph(s) that don't belong. Fix 5 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 100
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_legal_d6_01_doc200011_corr11244121",
+        "doc_seed": 200011,
+        "corruption_seed": 11244121,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 14,
+        "corruption_types": [
+          "spelling",
+          "content_insert",
+          "names",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 8 spelling error(s): 'assesment' \u2192 'assessment', 'Departmnet' \u2192 'DEPARTMENT', 'complience' \u2192 'compliance' (and 5 more). Remove 4 junk paragraph(s) that don't belong. Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 100
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d1_00_doc200012_corr7650359",
+        "doc_seed": 200012,
+        "corruption_seed": 7650359,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Clinicla' \u2192 'Clinical', 'Experiance' \u2192 'Experience'.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d1_01_doc200013_corr3092067",
+        "doc_seed": 200013,
+        "corruption_seed": 3092067,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'Experiance' \u2192 'Experience', 'Cardivascular' \u2192 'CARDIOVASCULAR', 'Clinicla' \u2192 'Clinical'.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d2_00_doc200014_corr2697205",
+        "doc_seed": 200014,
+        "corruption_seed": 2697205,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 4,
+        "corruption_types": [
+          "case",
+          "content_insert",
+          "punctuation",
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Experiance' \u2192 'Experience'. Fix 1 capitalization error(s) \u2014 some text has incorrect case. Fix 1 punctuation error(s). Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d2_01_doc200015_corr6706783",
+        "doc_seed": 200015,
+        "corruption_seed": 6706783,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "spelling",
+          "content_insert",
+          "content_delete",
+          "punctuation"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Clinicla' \u2192 'CLINICAL', 'Efficasy' \u2192 'EFFICACY'. Fix 1 punctuation error(s). Restore 1 paragraph(s) that were removed from the document. Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d3_00_doc200016_corr11778827",
+        "doc_seed": 200016,
+        "corruption_seed": 11778827,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 8,
+        "corruption_types": [
+          "content_insert",
+          "spelling"
+        ],
+        "instruction": "Fix 4 spelling error(s): 'Experiance' \u2192 'Experience', 'advsere' \u2192 'adverse', 'Cardivascular' \u2192 'CARDIOVASCULAR' (and 1 more). Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d3_01_doc200017_corr8503716",
+        "doc_seed": 200017,
+        "corruption_seed": 8503716,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 0,
+        "corruption_types": [
+          "names"
+        ],
+        "instruction": "The document appears correct. No edits needed.",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d4_00_doc200018_corr3160395",
+        "doc_seed": 200018,
+        "corruption_seed": 3160395,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 18,
+        "corruption_types": [
+          "formatting_strip",
+          "punctuation",
+          "alignment",
+          "spelling"
+        ],
+        "instruction": "Fix 4 spelling error(s): 'tuburculosis' \u2192 'tuberculosis', 'clinicla' \u2192 'clinical', 'advsere' \u2192 'adverse' (and 1 more). Fix 5 punctuation error(s). Restore 5 missing formatting tag(s) (bold, highlight). Fix 4 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d4_01_doc200019_corr8297598",
+        "doc_seed": 200019,
+        "corruption_seed": 8297598,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 13,
+        "corruption_types": [
+          "alignment",
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Fix 9 paragraph alignment error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d5_00_doc200020_corr2801290",
+        "doc_seed": 200020,
+        "corruption_seed": 2801290,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 22,
+        "corruption_types": [
+          "pdf_artifacts",
+          "alignment",
+          "spelling",
+          "names"
+        ],
+        "instruction": "Fix 7 spelling error(s): 'Experiance' \u2192 'Experience', 'advsere' \u2192 'adverse', 'Cardivascular' \u2192 'CARDIOVASCULAR' (and 4 more). Fix 7 paragraph alignment error(s). Clean up 8 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d5_01_doc200021_corr9688162",
+        "doc_seed": 200021,
+        "corruption_seed": 9688162,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 13,
+        "corruption_types": [
+          "content_insert",
+          "formatting_strip",
+          "junk_chars",
+          "formatting_wrong"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Restore 4 missing formatting tag(s) (bold, highlight). Remove invisible junk characters (zero-width spaces, BOMs) from 5 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d6_00_doc200022_corr3892193",
+        "doc_seed": 200022,
+        "corruption_seed": 3892193,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 100
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_pharma_d6_01_doc200023_corr3564209",
+        "doc_seed": 200023,
+        "corruption_seed": 3564209,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 25,
+        "corruption_types": [
+          "case",
+          "names",
+          "formatting_strip",
+          "content_insert"
+        ],
+        "instruction": "Fix 17 capitalization error(s) \u2014 some text has incorrect case. Remove 4 junk paragraph(s) that don't belong. Restore 4 missing formatting tag(s) (bold, highlight).",
+        "max_steps": 100
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d1_00_doc200024_corr7311696",
+        "doc_seed": 200024,
+        "corruption_seed": 7311696,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 1,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'effeciency' \u2192 'efficiency'.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d1_01_doc200025_corr9225571",
+        "doc_seed": 200025,
+        "corruption_seed": 9225571,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Preformance' \u2192 'Performance', 'Revnue' \u2192 'Revenue'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d2_00_doc200026_corr10593118",
+        "doc_seed": 200026,
+        "corruption_seed": 10593118,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "spelling",
+          "names",
+          "content_delete"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'revnue' \u2192 'revenue', 'tranformation' \u2192 'transformation', 'Revnue' \u2192 'Revenue'. Correct 1 wrong name(s)/entity(ies): 'Valley Enterprises' should be 'Summit Industries'. Restore 2 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d2_01_doc200027_corr7343112",
+        "doc_seed": 200027,
+        "corruption_seed": 7343112,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "case",
+          "punctuation",
+          "content_delete"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Restore 2 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d3_00_doc200028_corr3340445",
+        "doc_seed": 200028,
+        "corruption_seed": 3340445,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 8,
+        "corruption_types": [
+          "case",
+          "formatting_wrong",
+          "formatting_strip",
+          "content_delete"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case. Restore 2 paragraph(s) that were removed from the document. Restore 2 missing formatting tag(s) (italic). Fix 1 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d3_01_doc200029_corr9961890",
+        "doc_seed": 200029,
+        "corruption_seed": 9961890,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 5,
+        "corruption_types": [
+          "formatting_strip",
+          "formatting_wrong",
+          "names",
+          "content_insert"
+        ],
+        "instruction": "Remove 3 junk paragraph(s) that don't belong. Restore 2 missing formatting tag(s) (italic, bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d4_00_doc200030_corr5906569",
+        "doc_seed": 200030,
+        "corruption_seed": 5906569,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 9,
+        "corruption_types": [
+          "spacing",
+          "formatting_strip",
+          "formatting_wrong",
+          "alignment"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (italic, bold). Fix 3 paragraph alignment error(s). Fix 4 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d4_01_doc200031_corr3348655",
+        "doc_seed": 200031,
+        "corruption_seed": 3348655,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 20,
+        "corruption_types": [
+          "spacing",
+          "case",
+          "content_delete",
+          "spelling"
+        ],
+        "instruction": "Fix 5 spelling error(s): 'effeciency' \u2192 'efficiency', 'aquisition' \u2192 'acquisition', 'Preformance' \u2192 'Performance' (and 2 more). Fix 5 capitalization error(s) \u2014 some text has incorrect case. Restore 5 paragraph(s) that were removed from the document. Fix 5 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d5_00_doc200032_corr5462284",
+        "doc_seed": 200032,
+        "corruption_seed": 5462284,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 22,
+        "corruption_types": [
+          "content_insert",
+          "spacing"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Fix 18 paragraph spacing error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d5_01_doc200033_corr11766284",
+        "doc_seed": 200033,
+        "corruption_seed": 11766284,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 26,
+        "corruption_types": [
+          "names",
+          "punctuation",
+          "alignment"
+        ],
+        "instruction": "Fix 13 punctuation error(s). Fix 13 paragraph alignment error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d6_00_doc200034_corr10283270",
+        "doc_seed": 200034,
+        "corruption_seed": 10283270,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 17,
+        "corruption_types": [
+          "punctuation",
+          "formatting_wrong",
+          "content_insert"
+        ],
+        "instruction": "Fix 12 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Fix 1 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 100
+      },
+      {
+        "split": "validation",
+        "case_id": "validation_business_d6_01_doc200035_corr2239137",
+        "doc_seed": 200035,
+        "corruption_seed": 2239137,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 23,
+        "corruption_types": [
+          "pdf_artifacts",
+          "formatting_strip"
+        ],
+        "instruction": "Restore 2 missing formatting tag(s) (italic, bold). Clean up 21 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 100
+      }
+    ],
+    "test": [
+      {
+        "split": "test",
+        "case_id": "test_legal_d1_00_doc300000_corr5032337",
+        "doc_seed": 300000,
+        "corruption_seed": 5032337,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d1_01_doc300001_corr11722846",
+        "doc_seed": 300001,
+        "corruption_seed": 11722846,
+        "difficulty": 1,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 1,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d2_00_doc300002_corr8956227",
+        "doc_seed": 300002,
+        "corruption_seed": 8956227,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 3,
+        "corruption_types": [
+          "names",
+          "content_insert",
+          "punctuation"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'Linda' should be 'Maria'. Fix 1 punctuation error(s). Remove 1 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d2_01_doc300003_corr7821767",
+        "doc_seed": 300003,
+        "corruption_seed": 7821767,
+        "difficulty": 2,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 8,
+        "corruption_types": [
+          "punctuation",
+          "content_insert",
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Affadavit' \u2192 'AFFIDAVIT', 'Plantiff' \u2192 'Plaintiff'. Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 2 punctuation error(s). Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d3_00_doc300004_corr4994335",
+        "doc_seed": 300004,
+        "corruption_seed": 4994335,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 10,
+        "corruption_types": [
+          "content_insert",
+          "punctuation",
+          "formatting_strip",
+          "case"
+        ],
+        "instruction": "Fix 2 capitalization error(s) \u2014 some text has incorrect case. Fix 3 punctuation error(s). Remove 3 junk paragraph(s) that don't belong. Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d3_01_doc300005_corr10165716",
+        "doc_seed": 300005,
+        "corruption_seed": 10165716,
+        "difficulty": 3,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 9,
+        "corruption_types": [
+          "names",
+          "content_delete",
+          "spelling",
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'Agremeent' \u2192 'Agreement', 'Agremeent' \u2192 'AGREEMENT', 'proffesional' \u2192 'professional'. Restore 3 paragraph(s) that were removed from the document. Fix 3 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d4_00_doc300006_corr12185158",
+        "doc_seed": 300006,
+        "corruption_seed": 12185158,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 23,
+        "corruption_types": [
+          "punctuation",
+          "content_delete",
+          "spacing"
+        ],
+        "instruction": "Fix 8 punctuation error(s). Restore 8 paragraph(s) that were removed from the document. Fix 7 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d4_01_doc300007_corr8296784",
+        "doc_seed": 300007,
+        "corruption_seed": 8296784,
+        "difficulty": 4,
+        "domain": "legal",
+        "doc_type": "affidavit",
+        "corruption_count": 2,
+        "corruption_types": [
+          "formatting_wrong"
+        ],
+        "instruction": "Fix 2 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d5_00_doc300008_corr5859062",
+        "doc_seed": 300008,
+        "corruption_seed": 5859062,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "case_brief",
+        "corruption_count": 29,
+        "corruption_types": [
+          "punctuation",
+          "spelling",
+          "junk_chars",
+          "content_insert"
+        ],
+        "instruction": "Fix 8 spelling error(s): 'agremeent' \u2192 'agreement', 'Plantiff' \u2192 'Plaintiff', 'arbitartion' \u2192 'arbitration' (and 5 more). Fix 9 punctuation error(s). Remove 4 junk paragraph(s) that don't belong. Remove invisible junk characters (zero-width spaces, BOMs) from 8 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d5_01_doc300009_corr12473734",
+        "doc_seed": 300009,
+        "corruption_seed": 12473734,
+        "difficulty": 5,
+        "domain": "legal",
+        "doc_type": "tax_assessment",
+        "corruption_count": 18,
+        "corruption_types": [
+          "punctuation",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 16 punctuation error(s). Restore 2 missing formatting tag(s) (bold).",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d6_00_doc300010_corr6332810",
+        "doc_seed": 300010,
+        "corruption_seed": 6332810,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 49,
+        "corruption_types": [
+          "alignment",
+          "punctuation"
+        ],
+        "instruction": "Fix 24 punctuation error(s). Fix 25 paragraph alignment error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "test",
+        "case_id": "test_legal_d6_01_doc300011_corr10568430",
+        "doc_seed": 300011,
+        "corruption_seed": 10568430,
+        "difficulty": 6,
+        "domain": "legal",
+        "doc_type": "legal_contract",
+        "corruption_count": 32,
+        "corruption_types": [
+          "spacing",
+          "spelling"
+        ],
+        "instruction": "Fix 12 spelling error(s): 'propreitary' \u2192 'proprietary', 'preformance' \u2192 'performance', 'arbitartion' \u2192 'arbitration' (and 9 more). Fix 20 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d1_00_doc300012_corr3351436",
+        "doc_seed": 300012,
+        "corruption_seed": 3351436,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 2,
+        "corruption_types": [
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Cardivascular' \u2192 'CARDIOVASCULAR'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d1_01_doc300013_corr7037254",
+        "doc_seed": 300013,
+        "corruption_seed": 7037254,
+        "difficulty": 1,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 1,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'Clinicla' \u2192 'Clinical'.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d2_00_doc300014_corr3780193",
+        "doc_seed": 300014,
+        "corruption_seed": 3780193,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "spelling",
+          "names",
+          "punctuation",
+          "content_delete"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'requirments' \u2192 'requirements'. Correct 1 wrong name(s)/entity(ies): 'James' should be 'Robert'. Fix 1 punctuation error(s). Restore 1 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d2_01_doc300015_corr11805741",
+        "doc_seed": 300015,
+        "corruption_seed": 11805741,
+        "difficulty": 2,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 5,
+        "corruption_types": [
+          "content_delete",
+          "spelling"
+        ],
+        "instruction": "Fix 2 spelling error(s): 'Cardivascular' \u2192 'Cardiovascular', 'contraindicatd' \u2192 'contraindicated'. Restore 3 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d3_00_doc300016_corr3581632",
+        "doc_seed": 300016,
+        "corruption_seed": 3581632,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 10,
+        "corruption_types": [
+          "formatting_wrong",
+          "spelling",
+          "case"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'efficasy' \u2192 'efficacy', 'regulatary' \u2192 'regulatory', 'cardivascular' \u2192 'cardiovascular'. Fix 3 capitalization error(s) \u2014 some text has incorrect case. Fix 4 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d3_01_doc300017_corr6928011",
+        "doc_seed": 300017,
+        "corruption_seed": 6928011,
+        "difficulty": 3,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 10,
+        "corruption_types": [
+          "case",
+          "formatting_strip"
+        ],
+        "instruction": "Fix 5 capitalization error(s) \u2014 some text has incorrect case. Restore 5 missing formatting tag(s) (bold).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d4_00_doc300018_corr12475396",
+        "doc_seed": 300018,
+        "corruption_seed": 12475396,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 12,
+        "corruption_types": [
+          "punctuation",
+          "spelling",
+          "content_delete"
+        ],
+        "instruction": "Fix 4 spelling error(s): 'Cardivascular' \u2192 'Cardiovascular', 'cardivascular' \u2192 'cardiovascular', 'contraindicatd' \u2192 'contraindicated' (and 1 more). Fix 4 punctuation error(s). Restore 4 paragraph(s) that were removed from the document.",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d4_01_doc300019_corr11089503",
+        "doc_seed": 300019,
+        "corruption_seed": 11089503,
+        "difficulty": 4,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 17,
+        "corruption_types": [
+          "case"
+        ],
+        "instruction": "Fix 17 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d5_00_doc300020_corr7724663",
+        "doc_seed": 300020,
+        "corruption_seed": 7724663,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d5_01_doc300021_corr9502615",
+        "doc_seed": 300021,
+        "corruption_seed": 9502615,
+        "difficulty": 5,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 21,
+        "corruption_types": [
+          "spacing",
+          "case",
+          "alignment",
+          "names"
+        ],
+        "instruction": "Fix 7 capitalization error(s) \u2014 some text has incorrect case. Fix 7 paragraph alignment error(s). Fix 7 paragraph spacing error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d6_00_doc300022_corr9411214",
+        "doc_seed": 300022,
+        "corruption_seed": 9411214,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "clinical_study_report",
+        "corruption_count": 28,
+        "corruption_types": [
+          "names",
+          "spacing",
+          "punctuation"
+        ],
+        "instruction": "Correct 1 wrong name(s)/entity(ies): 'William' should be 'Michael'. Fix 8 punctuation error(s). Fix 19 paragraph spacing error(s).",
+        "max_steps": 100
+      },
+      {
+        "split": "test",
+        "case_id": "test_pharma_d6_01_doc300023_corr12265134",
+        "doc_seed": 300023,
+        "corruption_seed": 12265134,
+        "difficulty": 6,
+        "domain": "pharma",
+        "doc_type": "drug_label",
+        "corruption_count": 35,
+        "corruption_types": [
+          "pdf_artifacts"
+        ],
+        "instruction": "Clean up 35 paragraph(s) with PDF-to-DOCX conversion artifacts (fragmented <run> elements that need merging).",
+        "max_steps": 100
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d1_00_doc300024_corr5826673",
+        "doc_seed": 300024,
+        "corruption_seed": 5826673,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 3,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 3 spelling error(s): 'Preformance' \u2192 'Performance', 'tranformation' \u2192 'transformation', 'aquisition' \u2192 'acquisition'.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d1_01_doc300025_corr10423711",
+        "doc_seed": 300025,
+        "corruption_seed": 10423711,
+        "difficulty": 1,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 2,
+        "corruption_types": [
+          "case",
+          "spelling"
+        ],
+        "instruction": "Fix 1 spelling error(s): 'revnue' \u2192 'revenue'. Fix 1 capitalization error(s) \u2014 some text has incorrect case.",
+        "max_steps": 10
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d2_00_doc300026_corr12651946",
+        "doc_seed": 300026,
+        "corruption_seed": 12651946,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 4,
+        "corruption_types": [
+          "punctuation",
+          "content_insert"
+        ],
+        "instruction": "Fix 2 punctuation error(s). Remove 2 junk paragraph(s) that don't belong.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d2_01_doc300027_corr5833136",
+        "doc_seed": 300027,
+        "corruption_seed": 5833136,
+        "difficulty": 2,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "content_delete"
+        ],
+        "instruction": "Restore 6 paragraph(s) that were removed from the document.",
+        "max_steps": 20
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d3_00_doc300028_corr11023130",
+        "doc_seed": 300028,
+        "corruption_seed": 11023130,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 7,
+        "corruption_types": [
+          "names",
+          "spelling"
+        ],
+        "instruction": "Fix 7 spelling error(s): 'signifcant' \u2192 'significant', 'Revnue' \u2192 'Revenue', 'Preformance' \u2192 'Performance' (and 4 more).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d3_01_doc300029_corr6466554",
+        "doc_seed": 300029,
+        "corruption_seed": 6466554,
+        "difficulty": 3,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 6,
+        "corruption_types": [
+          "case",
+          "formatting_wrong",
+          "names",
+          "content_delete"
+        ],
+        "instruction": "Fix 3 capitalization error(s) \u2014 some text has incorrect case. Restore 2 paragraph(s) that were removed from the document. Fix 1 incorrect formatting tag(s) (wrong type or color).",
+        "max_steps": 30
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d4_00_doc300030_corr6036457",
+        "doc_seed": 300030,
+        "corruption_seed": 6036457,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 23,
+        "corruption_types": [
+          "spacing",
+          "punctuation",
+          "spelling"
+        ],
+        "instruction": "Fix 7 spelling error(s): 'revnue' \u2192 'revenue', 'signifcant' \u2192 'significant', 'sufficent' \u2192 'sufficient' (and 4 more). Fix 8 punctuation error(s). Fix 8 paragraph spacing error(s).",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d4_01_doc300031_corr11473968",
+        "doc_seed": 300031,
+        "corruption_seed": 11473968,
+        "difficulty": 4,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 9,
+        "corruption_types": [
+          "spelling"
+        ],
+        "instruction": "Fix 9 spelling error(s): 'Corparation' \u2192 'Corporation', 'revnue' \u2192 'revenue', 'sufficent' \u2192 'sufficient' (and 6 more).",
+        "max_steps": 40
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d5_00_doc300032_corr5409011",
+        "doc_seed": 300032,
+        "corruption_seed": 5409011,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 29,
+        "corruption_types": [
+          "content_delete",
+          "formatting_strip",
+          "junk_chars",
+          "punctuation"
+        ],
+        "instruction": "Fix 9 punctuation error(s). Restore 10 paragraph(s) that were removed from the document. Restore 1 missing formatting tag(s) (bold). Remove invisible junk characters (zero-width spaces, BOMs) from 9 location(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d5_01_doc300033_corr11756978",
+        "doc_seed": 300033,
+        "corruption_seed": 11756978,
+        "difficulty": 5,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 21,
+        "corruption_types": [
+          "content_insert",
+          "alignment"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Fix 17 paragraph alignment error(s).",
+        "max_steps": 60
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d6_00_doc300034_corr7640654",
+        "doc_seed": 300034,
+        "corruption_seed": 7640654,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 25,
+        "corruption_types": [
+          "content_insert",
+          "case"
+        ],
+        "instruction": "Fix 21 capitalization error(s) \u2014 some text has incorrect case. Remove 4 junk paragraph(s) that don't belong.",
+        "max_steps": 100
+      },
+      {
+        "split": "test",
+        "case_id": "test_business_d6_01_doc300035_corr4736557",
+        "doc_seed": 300035,
+        "corruption_seed": 4736557,
+        "difficulty": 6,
+        "domain": "business",
+        "doc_type": "business_report",
+        "corruption_count": 44,
+        "corruption_types": [
+          "alignment",
+          "spacing",
+          "content_insert"
+        ],
+        "instruction": "Remove 4 junk paragraph(s) that don't belong. Fix 20 paragraph alignment error(s). Fix 20 paragraph spacing error(s).",
+        "max_steps": 100
+      }
+    ]
+  }
+}

@@ -6,6 +6,9 @@
 
 """Doc Edit Game V2 environment server components."""
 
-from .doc_edit_game_v2_environment import DocEditGameV2Environment
+try:
+    from .doc_edit_game_v2_environment import DocEditGameV2Environment
+except Exception:
+    DocEditGameV2Environment = None
 
 __all__ = ["DocEditGameV2Environment"]

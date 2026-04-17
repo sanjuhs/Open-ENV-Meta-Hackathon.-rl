@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocEdit Game V2 Classic</title>
+    <link rel="stylesheet" href="/static/classic/app.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Human + Model Playground</p>
+          <h1>DocEdit Game V2 Classic</h1>
+          <p class="subhead">
+            The original three-column layout is preserved here for side-by-side
+            inspection of the reference, human lane, and model lane.
+          </p>
+          <p class="view-links">
+            <a href="/modern">Open Modern Editor</a>
+            <a href="/classic">Stay on Classic</a>
+          </p>
+        </div>
+
+        <div class="controls-card">
+          <div class="seed-grid">
+            <label>
+              Doc Seed
+              <input id="seedInput" type="number" min="1" placeholder="random" />
+            </label>
+            <label>
+              Corruption Seed
+              <input id="corruptionSeedInput" type="number" min="1" placeholder="random" />
+            </label>
+            <label>
+              Difficulty
+              <select id="difficultySelect">
+                <option value="1">1 · trivial</option>
+                <option value="2" selected>2 · easy</option>
+                <option value="3">3 · medium</option>
+                <option value="4">4 · hard</option>
+                <option value="5">5 · expert</option>
+                <option value="6">6 · nightmare</option>
+              </select>
+            </label>
+            <label>
+              Domain
+              <select id="domainSelect">
+                <option value="any" selected>any</option>
+                <option value="legal">legal</option>
+                <option value="pharma">pharma</option>
+                <option value="business">business</option>
+              </select>
+            </label>
+          </div>
+          <div class="button-row">
+            <button id="loadSeedButton" class="button button-primary">Load New Random Seed</button>
+            <button id="reloadExactSeedButton" class="button button-secondary">Load This Seed</button>
+            <button id="rerollCorruptionButton" class="button button-ghost">Same Doc, New Corruption</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="brief-grid">
+        <article class="brief-card">
+          <p class="eyebrow">Scenario Exposition</p>
+          <p id="scenarioExposition" class="brief-text"></p>
+        </article>
+        <article class="brief-card">
+          <p class="eyebrow">Instruction</p>
+          <p id="instructionText" class="brief-text"></p>
+        </article>
+      </section>
+
+      <section class="stats-row">
+        <div class="stat-card">
+          <span class="stat-label">Session</span>
+          <span id="sessionId" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Doc Seed</span>
+          <span id="docSeed" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Corruption Seed</span>
+          <span id="corruptionSeedValue" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Difficulty</span>
+          <span id="difficultyValue" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Domain</span>
+          <span id="domainValue" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Doc Type</span>
+          <span id="docTypeValue" class="stat-value">-</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Corruptions</span>
+          <span id="corruptionValue" class="stat-value">-</span>
+        </div>
+      </section>
+
+      <main class="workspace-grid">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Reference</p>
+              <h2>Corrupted Source Document</h2>
+            </div>
+          </div>
+          <textarea id="sourceDocument" class="document-area" readonly></textarea>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Human Lane</p>
+              <h2>Your Working Draft</h2>
+            </div>
+            <button id="submitHumanButton" class="button button-primary">Submit Human Draft</button>
+          </div>
+          <textarea id="humanDocument" class="document-area"></textarea>
+          <div class="score-row human-score-row">
+            <div class="score-card">
+              <span class="stat-label">Live Similarity</span>
+              <span id="humanLiveSimilarity" class="score-value">-</span>
+            </div>
+            <div class="score-card">
+              <span class="stat-label">Final Score</span>
+              <span id="humanCompositeScore" class="score-value">-</span>
+            </div>
+            <div class="score-card">
+              <span class="stat-label">Collateral Damage</span>
+              <span id="humanCollateral" class="score-value">-</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Model Lane</p>
+              <h2>Tool-Based Workspace</h2>
+            </div>
+            <button id="submitModelButton" class="button button-secondary">Submit Model Draft</button>
+          </div>
+
+          <div class="model-controls">
+            <div class="model-run-box">
+              <label>
+                Run Mode
+                <select id="runModelMode">
+                  <option value="tool_pass">Tool pass</option>
+                  <option value="direct_rewrite">Direct rewrite</option>
+                </select>
+              </label>
+              <div class="button-row">
+                <button id="runModelButton" class="button button-primary">Run Model</button>
+                <button id="syncModelButton" class="button button-ghost">Sync Manual Rewrite</button>
+              </div>
+            </div>
+
+            <label>
+              Tool
+              <select id="modelToolSelect"></select>
+            </label>
+            <label>
+              Params (JSON)
+              <textarea id="modelParams" class="json-area"></textarea>
+            </label>
+            <button id="applyModelActionButton" class="button button-ghost">Apply Tool</button>
+          </div>
+
+          <textarea id="modelDocument" class="document-area"></textarea>
+
+          <div class="score-row">
+            <div class="score-card">
+              <span class="stat-label">Similarity</span>
+              <span id="modelSimilarity" class="score-value">-</span>
+            </div>
+            <div class="score-card">
+              <span class="stat-label">Last Reward</span>
+              <span id="modelReward" class="score-value">-</span>
+            </div>
+            <div class="score-card">
+              <span class="stat-label">Steps Left</span>
+              <span id="modelStepsRemaining" class="score-value">-</span>
+            </div>
+            <div class="score-card">
+              <span class="stat-label">Final Score</span>
+              <span id="modelCompositeScore" class="score-value">-</span>
+            </div>
+          </div>
+
+          <details class="details-card">
+            <summary>Model Observation</summary>
+            <pre id="modelObservation" class="observation-box"></pre>
+          </details>
+
+          <details class="details-card">
+            <summary>Model Activity</summary>
+            <pre id="modelActivity" class="observation-box"></pre>
+          </details>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/classic/app.js"></script>
+  </body>
+</html>

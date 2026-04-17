@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Interaction Game</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Exploratory RLVR Prototype</p>
+        <h1>Social Interaction Game</h1>
+        <p class="lede">
+          Play a hidden-state social environment with procedural scenarios, protocol-style verifiers,
+          and VAD-based emotional scoring.
+        </p>
+      </section>
+
+      <section class="panel controls">
+        <div class="control-grid">
+          <label>
+            <span>Scenario</span>
+            <select id="scenarioSelect"></select>
+          </label>
+          <label>
+            <span>Procedural Seed</span>
+            <input id="proceduralSeed" type="number" min="0" value="0">
+          </label>
+          <div class="button-row">
+            <button id="resetScenario">Load Scenario</button>
+            <button id="resetProcedural" class="ghost">Load Procedural</button>
+            <button id="autoplay" class="warm">Baseline AI Turn</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <article class="panel stage">
+          <div class="panel-head">
+            <h2>Conversation</h2>
+            <p id="scenarioMeta"></p>
+          </div>
+          <div id="history" class="history"></div>
+          <div class="composer">
+            <textarea id="responseInput" rows="5" placeholder="Write your response here..."></textarea>
+            <div class="button-row">
+              <button id="submitResponse">Send Response</button>
+            </div>
+          </div>
+        </article>
+
+        <aside class="side-stack">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>World State</h2>
+            </div>
+            <div id="worldState" class="stat-grid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Score Breakdown</h2>
+            </div>
+            <div id="scoreCard" class="score-card empty">Play a turn to see verifier output.</div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Verifier Rules</h2>
+            </div>
+            <pre id="debugRules" class="debug-block"></pre>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocEdit Game V2</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy card">
+          <p class="eyebrow">DocEdit Game V2</p>
+          <h1>Repair a corrupted document like a real editor.</h1>
+          <p class="hero-text">
+            The left side always shows the corrupted source document. The right
+            side switches between a human editing lane and a model lane, so the
+            demo stays focused and readable.
+          </p>
+          <div class="chip-row">
+            <span class="meta-chip"><span>Session</span><strong id="sessionId">-</strong></span>
+            <span class="meta-chip"><span>Doc Seed</span><strong id="docSeed">-</strong></span>
+            <span class="meta-chip"><span>Corruption Seed</span><strong id="corruptionSeedValue">-</strong></span>
+            <span class="meta-chip"><span>Difficulty</span><strong id="difficultyValue">-</strong></span>
+            <span class="meta-chip"><span>Domain</span><strong id="domainValue">-</strong></span>
+            <span class="meta-chip"><span>Doc Type</span><strong id="docTypeValue">-</strong></span>
+            <span class="meta-chip"><span>Corruptions</span><strong id="corruptionValue">-</strong></span>
+          </div>
+        </div>
+
+        <aside class="control-card card">
+          <p class="eyebrow">Task Controls</p>
+          <div class="ui-links">
+            <a href="/modern">Modern Editor</a>
+            <a href="/classic">Classic Layout</a>
+          </div>
+          <div class="field-grid">
+            <label>
+              Doc Seed
+              <input id="seedInput" type="number" min="1" placeholder="random" />
+            </label>
+            <label>
+              Corruption Seed
+              <input id="corruptionSeedInput" type="number" min="1" placeholder="random" />
+            </label>
+            <label>
+              Difficulty
+              <select id="difficultySelect">
+                <option value="1">1 · trivial</option>
+                <option value="2" selected>2 · easy</option>
+                <option value="3">3 · medium</option>
+                <option value="4">4 · hard</option>
+                <option value="5">5 · expert</option>
+                <option value="6">6 · nightmare</option>
+              </select>
+            </label>
+            <label>
+              Domain
+              <select id="domainSelect">
+                <option value="any" selected>any</option>
+                <option value="legal">legal</option>
+                <option value="pharma">pharma</option>
+                <option value="business">business</option>
+              </select>
+            </label>
+          </div>
+          <div class="button-row">
+            <button id="loadSeedButton" class="button button-primary">Load New Seed</button>
+            <button id="reloadExactSeedButton" class="button button-secondary">Reload This Seed</button>
+            <button id="rerollCorruptionButton" class="button button-ghost">Same Doc, New Corruption</button>
+          </div>
+        </aside>
+      </header>
+
+      <section class="brief-layout">
+        <article class="card brief-card">
+          <p class="eyebrow">Scenario</p>
+          <p id="scenarioExposition" class="brief-copy"></p>
+        </article>
+        <article class="card brief-card instruction-card">
+          <p class="eyebrow">Fixed Instruction</p>
+          <p id="instructionText" class="brief-copy"></p>
+        </article>
+        <article class="card playbook-card">
+          <p class="eyebrow">What To Expect</p>
+          <div class="expect-grid">
+            <div>
+              <h2>Human lane</h2>
+              <p>
+                Repair the rendered working draft, then submit it to receive a
+                final score based on similarity, edit accuracy, and collateral
+                damage.
+              </p>
+            </div>
+            <div>
+              <h2>Model lane</h2>
+              <p>
+                Apply tools one at a time, sync a manual rewrite, or press
+                <strong>Run Model</strong> to execute a high-accuracy demo pass.
+              </p>
+            </div>
+            <div>
+              <h2>Reference</h2>
+              <p>
+                The left document is the corrupted source. The scenario and the
+                instruction do not change within a session.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <main class="workspace-layout">
+        <section class="card panel reference-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Reference</p>
+              <h2>Corrupted Source Document</h2>
+            </div>
+          </div>
+
+          <div class="outline-panel">
+            <div class="outline-header">
+              <strong>Document outline</strong>
+              <span>Jump to the relevant section quickly.</span>
+            </div>
+            <div id="referenceOutline" class="outline-list"></div>
+          </div>
+
+          <div class="paper-frame readonly-frame">
+            <div id="referenceEditor" class="document-surface readonly-surface"></div>
+          </div>
+
+          <details class="details-card">
+            <summary>Raw Source Markup</summary>
+            <textarea id="sourceDocumentRaw" class="raw-markup" readonly></textarea>
+          </details>
+        </section>
+
+        <section class="workspace-column">
+          <div class="lane-switch card">
+            <button id="humanLaneTab" class="lane-tab is-active" data-lane="human">Human Lane</button>
+            <button id="modelLaneTab" class="lane-tab" data-lane="model">Model Lane</button>
+          </div>
+
+          <section id="humanLanePanel" class="card panel lane-panel is-active">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Human Lane</p>
+                <h2>Your Working Draft</h2>
+              </div>
+              <button id="submitHumanButton" class="button button-primary">Submit Human Draft</button>
+            </div>
+
+            <div class="editor-shell">
+              <div id="humanToolbar" class="editor-toolbar">
+                <div class="toolbar-group">
+                  <button class="toolbar-button" data-editor="human" data-inline="bold"><strong>B</strong></button>
+                  <button class="toolbar-button" data-editor="human" data-inline="italic"><em>I</em></button>
+                  <button class="toolbar-button" data-editor="human" data-inline="underline"><u>U</u></button>
+                  <button class="toolbar-button" data-editor="human" data-inline="highlight">Highlight</button>
+                  <button class="toolbar-button" data-editor="human" data-inline="remove">Clear</button>
+                </div>
+                <div class="toolbar-group toolbar-selects">
+                  <label>
+                    Block
+                    <select id="humanBlockType">
+                      <option value="p">Paragraph</option>
+                      <option value="heading-1">Heading 1</option>
+                      <option value="heading-2">Heading 2</option>
+                      <option value="heading-3">Heading 3</option>
+                    </select>
+                  </label>
+                  <label>
+                    Align
+                    <select id="humanAlignment">
+                      <option value="left">Left</option>
+                      <option value="center">Center</option>
+                      <option value="right">Right</option>
+                      <option value="justify">Justify</option>
+                    </select>
+                  </label>
+                  <label>
+                    Space After
+                    <select id="humanSpacing">
+                      <option value="0">0</option>
+                      <option value="6">6</option>
+                      <option value="12">12</option>
+                      <option value="18">18</option>
+                      <option value="24">24</option>
+                    </select>
+                  </label>
+                  <label>
+                    First Indent
+                    <select id="humanIndent">
+                      <option value="0">0</option>
+                      <option value="36">36</option>
+                      <option value="72">72</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="toolbar-group">
+                  <button id="humanAddParagraph" class="toolbar-button">Add Paragraph</button>
+                  <button id="humanMoveUp" class="toolbar-button">Move Up</button>
+                  <button id="humanMoveDown" class="toolbar-button">Move Down</button>
+                  <button id="humanDeleteBlock" class="toolbar-button toolbar-danger">Delete Block</button>
+                </div>
+              </div>
+
+              <div class="selection-bar">
+                <span class="selection-label">Selected block</span>
+                <strong id="humanSelectionLabel">None</strong>
+              </div>
+
+              <div class="paper-frame">
+                <div id="humanEditor" class="document-surface"></div>
+              </div>
+            </div>
+
+            <div class="score-grid">
+              <article class="score-card">
+                <span class="score-label">Live Similarity</span>
+                <strong id="humanLiveSimilarity">-</strong>
+              </article>
+              <article class="score-card">
+                <span class="score-label">Final Score</span>
+                <strong id="humanCompositeScore">-</strong>
+              </article>
+              <article class="score-card">
+                <span class="score-label">Collateral Damage</span>
+                <strong id="humanCollateral">-</strong>
+              </article>
+            </div>
+
+            <details class="details-card">
+              <summary>Human Raw Markup</summary>
+              <textarea id="humanRawMarkup" class="raw-markup" readonly></textarea>
+            </details>
+          </section>
+
+          <section id="modelLanePanel" class="card panel lane-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Model Lane</p>
+                <h2>Tooling + Rewrite Workspace</h2>
+              </div>
+              <button id="submitModelButton" class="button button-secondary">Submit Model Draft</button>
+            </div>
+
+            <div class="model-topbar">
+              <div class="model-runner card inset-card">
+                <div>
+                  <span class="mini-label">Demo Runner</span>
+                  <strong>Run the model lane in one click.</strong>
+                </div>
+                <div class="runner-controls">
+                  <label>
+                    Mode
+                    <select id="runModelMode">
+                      <option value="tool_pass">Tool pass</option>
+                      <option value="direct_rewrite">Direct rewrite</option>
+                    </select>
+                  </label>
+                  <button id="runModelButton" class="button button-primary">Run Model</button>
+                  <button id="syncModelButton" class="button button-ghost">Sync Manual Rewrite</button>
+                </div>
+              </div>
+
+              <div class="model-tools card inset-card">
+                <div class="tool-head">
+                  <div>
+                    <span class="mini-label">Tool Console</span>
+                    <strong>Apply one environment tool at a time.</strong>
+                  </div>
+                  <button id="applyModelActionButton" class="button button-ghost">Apply Tool</button>
+                </div>
+                <div class="tool-form">
+                  <label>
+                    Tool
+                    <select id="modelToolSelect"></select>
+                  </label>
+                  <label class="tool-params">
+                    Params (JSON)
+                    <textarea id="modelParams" class="json-area"></textarea>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="editor-shell">
+              <div id="modelToolbar" class="editor-toolbar">
+                <div class="toolbar-group">
+                  <button class="toolbar-button" data-editor="model" data-inline="bold"><strong>B</strong></button>
+                  <button class="toolbar-button" data-editor="model" data-inline="italic"><em>I</em></button>
+                  <button class="toolbar-button" data-editor="model" data-inline="underline"><u>U</u></button>
+                  <button class="toolbar-button" data-editor="model" data-inline="highlight">Highlight</button>
+                  <button class="toolbar-button" data-editor="model" data-inline="remove">Clear</button>
+                </div>
+                <div class="toolbar-group toolbar-selects">
+                  <label>
+                    Block
+                    <select id="modelBlockType">
+                      <option value="p">Paragraph</option>
+                      <option value="heading-1">Heading 1</option>
+                      <option value="heading-2">Heading 2</option>
+                      <option value="heading-3">Heading 3</option>
+                    </select>
+                  </label>
+                  <label>
+                    Align
+                    <select id="modelAlignment">
+                      <option value="left">Left</option>
+                      <option value="center">Center</option>
+                      <option value="right">Right</option>
+                      <option value="justify">Justify</option>
+                    </select>
+                  </label>
+                  <label>
+                    Space After
+                    <select id="modelSpacing">
+                      <option value="0">0</option>
+                      <option value="6">6</option>
+                      <option value="12">12</option>
+                      <option value="18">18</option>
+                      <option value="24">24</option>
+                    </select>
+                  </label>
+                  <label>
+                    First Indent
+                    <select id="modelIndent">
+                      <option value="0">0</option>
+                      <option value="36">36</option>
+                      <option value="72">72</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="toolbar-group">
+                  <button id="modelAddParagraph" class="toolbar-button">Add Paragraph</button>
+                  <button id="modelMoveUp" class="toolbar-button">Move Up</button>
+                  <button id="modelMoveDown" class="toolbar-button">Move Down</button>
+                  <button id="modelDeleteBlock" class="toolbar-button toolbar-danger">Delete Block</button>
+                </div>
+              </div>
+
+              <div class="selection-bar">
+                <span class="selection-label">Selected block</span>
+                <strong id="modelSelectionLabel">None</strong>
+              </div>
+
+              <div class="paper-frame">
+                <div id="modelEditor" class="document-surface"></div>
+              </div>
+            </div>
+
+            <div class="score-grid model-score-grid">
+              <article class="score-card">
+                <span class="score-label">Similarity</span>
+                <strong id="modelSimilarity">-</strong>
+              </article>
+              <article class="score-card">
+                <span class="score-label">Last Reward</span>
+                <strong id="modelReward">-</strong>
+              </article>
+              <article class="score-card">
+                <span class="score-label">Steps Left</span>
+                <strong id="modelStepsRemaining">-</strong>
+              </article>
+              <article class="score-card">
+                <span class="score-label">Final Score</span>
+                <strong id="modelCompositeScore">-</strong>
+              </article>
+            </div>
+
+            <div class="model-bottom">
+              <section class="card inset-card activity-card">
+                <div class="activity-header">
+                  <div>
+                    <span class="mini-label">Activity</span>
+                    <strong>Recent model actions</strong>
+                  </div>
+                </div>
+                <div id="modelActivity" class="activity-list"></div>
+              </section>
+
+              <section class="card inset-card observation-card">
+                <div class="activity-header">
+                  <div>
+                    <span class="mini-label">Observation</span>
+                    <strong>Current environment state</strong>
+                  </div>
+                </div>
+                <pre id="modelObservation" class="observation-box"></pre>
+                <details class="details-card">
+                  <summary>Model Raw Markup</summary>
+                  <textarea id="modelRawMarkup" class="raw-markup" readonly></textarea>
+                </details>
+              </section>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

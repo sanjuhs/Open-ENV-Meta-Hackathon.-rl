@@ -106,6 +106,27 @@ docker build -t doc_edit_game_v2-env:latest -f server/Dockerfile .
 docker run -p 8000:8000 doc_edit_game_v2-env:latest
 ```
 
+## Human + Model Web UI
+
+The server now includes a browser playground for the same document-generation and grading logic:
+
+- `GET /` serves a human-editing interface
+- `POST /api/game/new` creates a new task from a seed, domain, and difficulty
+- `POST /api/game/{session_id}/submit-human` grades the human-edited document
+- `POST /api/game/{session_id}/model-step` applies model-style tool calls on a parallel workspace
+- `POST /api/game/{session_id}/submit-model` grades the model workspace
+
+UI flow:
+
+1. Load a new random seed from the top bar
+2. Read the scenario exposition + instruction
+3. Edit the corrupted source document in the human lane
+4. Optionally apply environment tools in the model lane on the same seed
+5. Submit each lane and compare scores side by side
+
+The human lane uses direct document submission for easy play-testing.
+The model lane uses the existing tool-based editing logic so it stays compatible with the RL-style environment.
+
 ## Architecture
 
 ```

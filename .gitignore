@@ -35,6 +35,19 @@ uv.lock
 # Misc
 *.log
 .cache/
+*.tgz
 
 # Sample data (large binary)
 sample-pdfs/
+
+# Training artifacts
+training/__pycache__/
+training/datasets/
+training/runs/
+training/runpod-info.md
+
+# Swift / macOS local builds
+macos editor/.build/
+macos editor/.build-scratch/
+DerivedData/
+.swiftpm/
